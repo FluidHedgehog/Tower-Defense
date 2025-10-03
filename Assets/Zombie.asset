@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: Assembly-CSharp::EnemyType
   health: 615
-  speed: 1
+  speed: 2

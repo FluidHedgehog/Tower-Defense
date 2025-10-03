@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 // public static class PathActions
@@ -43,16 +44,6 @@ public class Path : MonoBehaviour
         }
     }
 
-    void OnEnable(){
-    
-
-     }
-
-    void OnDisable(){
-    
-
-     }
-
     void OnDrawGizmos()
     {
         foreach (var waypoint in avaibleWaypoints)
@@ -68,10 +59,18 @@ public class Path : MonoBehaviour
         }
     }
 
-    public (Vector3, int) GetNextWaypoint(int waypoint)
+    public Vector3 GetNextWaypoint(int waypoint)
     {
-        Vector3 next = waypoints[waypoint + 2].transform.position;
-        return (next, waypoint + 1);
+        if (waypoints.ContainsKey(waypoint + 1))
+            return waypoints[waypoint + 1].transform.position;
+        else
+            return GetFinalWaypoint();
+
+    }
+
+    public Vector3 GetFinalWaypoint()
+    {
+        return waypoints.Values.Last().transform.position;
     }
 
 }

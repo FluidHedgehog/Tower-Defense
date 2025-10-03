@@ -8,9 +8,10 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [SerializeField] short health;
     [SerializeField] float speed;
 
-    [SerializeField] int currentWaypointIndex;
+    [SerializeField] int nextWaypointIndex = 2;
     [SerializeField] Vector3 currentWaypoint;
     [SerializeField] Vector3 nextWaypoint;
+    [SerializeField] Vector3 finalWaypoint;
 
     [SerializeField] Path path;
 
@@ -19,22 +20,19 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         health = type.health;
         speed = type.speed;
 
-
         path = FindFirstObjectByType<Path>();
 
         transform.position = path.waypoints[0].transform.position;
         currentWaypoint = path.waypoints[1].transform.position;
         nextWaypoint = path.waypoints[2].transform.position;
+        finalWaypoint = path.GetFinalWaypoint();
         ((IMoveable)this).GetNextWaypoint();
     }
-
-
 
     void Update()
     {
         ((IMoveable)this).GoToNextWaypoint();
     }
-
 
     void IMoveable.GetNextWaypoint()
     {
@@ -45,23 +43,23 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, Time.deltaTime * speed);
 
+        if (Vector3.Distance(transform.position, finalWaypoint) < 0.1f)
+        {
+            ((IMoveable)this).Dissappear();
+            return;
+        }
+
         if (Vector3.Distance(transform.position, currentWaypoint) < 0.1f)
         {
-            if (currentWaypointIndex >= path.waypoints.Count - 1)
-            {
-                ((IMoveable)this).Dissappear();
-                return;
-            }
             currentWaypoint = nextWaypoint;
-            (nextWaypoint, currentWaypointIndex) = path.GetNextWaypoint(currentWaypointIndex);
+            nextWaypoint = path.GetNextWaypoint(nextWaypointIndex);
+            nextWaypointIndex++;
         }
-        
     }
 
     void IMoveable.Dissappear()
     {
         Destroy(gameObject);
     }
-
-
+    
 }
