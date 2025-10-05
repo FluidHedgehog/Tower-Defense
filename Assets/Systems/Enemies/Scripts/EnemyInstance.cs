@@ -16,6 +16,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [SerializeField] short health;
     [SerializeField] float speed;
 
+    // Distance variables
+    // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
+    [SerializeField] float distanceTreshold = 0.1f;
+    [SerializeField] float distanceMoved;
+    [SerializeField] float totalDistance;
+    [SerializeField] Vector3 lastPosition;
+
     // PathHelper variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
@@ -43,6 +51,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
     void Update()
     {
+        distanceMoved = Vector3.Distance(transform.position, lastPosition);
+
+        if (distanceMoved >= distanceTreshold)
+        {
+            totalDistance += distanceMoved;
+            lastPosition = transform.position;
+        }
+
         ((IMoveable)this).GoToNextWaypoint();
     }
 
@@ -64,14 +80,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
     }
 
-    void ApplyDamage()
-    {
-        
-    }
-
     void IMoveable.Dissappear()
     {
         Destroy(gameObject);
     }
-    
 }

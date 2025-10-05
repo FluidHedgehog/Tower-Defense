@@ -3,9 +3,9 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
-public class InputManager : MonoBehaviour
+public class InputsManager : MonoBehaviour
 {
-    public static InputManager Instance { get; private set; }
+    public static InputsManager Instance { get; private set; }
 
     public class Vector2Event : UnityEvent<Vector2> { }
         public Vector2Event pointEvent = new Vector2Event();

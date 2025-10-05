@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Idle : IState
 {
-    InputManager inputManager;
+    InputsManager inputManager;
 
-    private Idle(InputManager input) { inputManager = input; }
+    private Idle(InputsManager input) { inputManager = input; }
 
     public void Enter()
     {
