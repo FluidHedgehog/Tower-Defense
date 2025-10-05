@@ -2,18 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// public static class PathActions
-// {
-//     public static event System.Func<int, (Vector3, int)> OnGetWaypoint;
-
-//     public static (Vector3, int) TriggerGetWaypoint(int waypoint)
-//     {
-//         return OnGetWaypoint?.Invoke(waypoint) ?? (default(Vector3), -1);
-//     }
-
-// }
-
-
 public class Path : MonoBehaviour
 {
 

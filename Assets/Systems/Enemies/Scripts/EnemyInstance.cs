@@ -3,17 +3,30 @@ using UnityEngine;
 
 public class EnemyInstance : MonoBehaviour, IMoveable
 {
-    [SerializeField] EnemyType type;
 
+    // References variables
+    // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
+    [SerializeField] EnemyType type;
+    [SerializeField] Path path;
+
+    // Enemy variables
+    // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     [SerializeField] short health;
     [SerializeField] float speed;
 
+    // PathHelper variables
+    // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     [SerializeField] int nextWaypointIndex = 2;
     [SerializeField] Vector3 currentWaypoint;
     [SerializeField] Vector3 nextWaypoint;
     [SerializeField] Vector3 finalWaypoint;
 
-    [SerializeField] Path path;
+    // Initialization of enemy
+    // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
 
     void OnEnable()
     {
@@ -26,17 +39,11 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         currentWaypoint = path.waypoints[1].transform.position;
         nextWaypoint = path.waypoints[2].transform.position;
         finalWaypoint = path.GetFinalWaypoint();
-        ((IMoveable)this).GetNextWaypoint();
     }
 
     void Update()
     {
         ((IMoveable)this).GoToNextWaypoint();
-    }
-
-    void IMoveable.GetNextWaypoint()
-    {
-
     }
 
     void IMoveable.GoToNextWaypoint()
@@ -55,6 +62,11 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             nextWaypoint = path.GetNextWaypoint(nextWaypointIndex);
             nextWaypointIndex++;
         }
+    }
+
+    void ApplyDamage()
+    {
+        
     }
 
     void IMoveable.Dissappear()
