@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ability", menuName = "Scriptable Objects/Ability")]
 public class Ability : ScriptableObject
 {
-    [SerializeField] short baseValue;
+    [SerializeField] public short baseValue;
     [SerializeField] public float range;
-    [SerializeField] float cooldown;
-    [SerializeField] Sprite sprite;
+    [SerializeField] public float cooldown;
+    [SerializeField] public GameObject projectile;
 }

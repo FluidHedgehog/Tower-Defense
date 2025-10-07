@@ -1,30 +1,40 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using Utils;
 
 public class AbilityInstance : MonoBehaviour
 {
-    [SerializeField] CircleCollider2D range;
-    [SerializeField] Ability ability;
+    [Header("Assign Scriptable Object 'Ability' here.")]
+    [Space(5)]
 
-    [SerializeField] List<EnemyInstance> enemiesInRange =new();
+    public Ability ability;
+
+    public GameObject showRange;
+
+    [HideInInspector] public CircleCollider2D range { get; protected set; }
+
+    [HideInInspector] public bool isActive { get; set; }
+
+    [HideInInspector] public bool canShoot { get; set; }
+
+    [HideInInspector] public List<EnemyInstance> enemiesInRange = new();
+    [HideInInspector] public PriorityQueue<EnemyInstance, float> prioritizedEnemies = new();
 
     void OnEnable()
     {
         range = gameObject.AddComponent<CircleCollider2D>();
         range.radius = ability.range;
         range.isTrigger = true;
+        canShoot = true;
+
+        showRange.transform.localScale *= ability.range * 2;
+
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public IEnumerator ShootCooldown()
     {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        enemiesInRange.Add(enemy);
-        Debug.Log("Added " + enemy);
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        enemiesInRange.Remove(enemy);
+        yield return new WaitForSeconds(ability.cooldown);
+        canShoot = true;
     }
 }

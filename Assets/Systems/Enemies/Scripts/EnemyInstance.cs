@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class EnemyInstance : MonoBehaviour, IMoveable
 {
@@ -7,30 +8,35 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     // References variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
+    [Header("Assign Scriptable Object 'EnemyType' here.")]
+    [Space(5)]
     [SerializeField] EnemyType type;
-    [SerializeField] Path path;
+    [HideInInspector] private Path path;
 
     // Enemy variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
+    [Header("Enemy variables - DO NOT TOUCH! FOR REFERENCE ONLY!")]
+    [Space(5)]
     [SerializeField] short health;
     [SerializeField] float speed;
+    [SerializeField] public bool isAlive = true;
 
     // Distance variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
-    [SerializeField] float distanceTreshold = 0.1f;
-    [SerializeField] float distanceMoved;
-    [SerializeField] float totalDistance;
-    [SerializeField] Vector3 lastPosition;
+    private float distanceTreshold = 0.1f;
+    private float distanceMoved;
+    [HideInInspector] public float totalDistance;
+    private Vector3 lastPosition;
 
     // PathHelper variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
-    [SerializeField] int nextWaypointIndex = 2;
-    [SerializeField] Vector3 currentWaypoint;
-    [SerializeField] Vector3 nextWaypoint;
-    [SerializeField] Vector3 finalWaypoint;
+    private int nextWaypointIndex = 2;
+    private Vector3 currentWaypoint;
+    private Vector3 nextWaypoint;
+    private Vector3 finalWaypoint;
 
     // Initialization of enemy
     // ---------------------------------------------------------------------------
@@ -80,8 +86,30 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
     }
 
+    public void ApplyDamage(short damage)
+    {
+        health -= damage;
+        ValidateHealth();
+    }
+
+    private void ValidateHealth()
+    {
+        if (health <= 0)
+        {
+            isAlive = false;
+            StartCoroutine(Die());
+        }
+    }
+
     void IMoveable.Dissappear()
     {
+        Destroy(gameObject);
+    }
+
+    IEnumerator Die()
+    {
+        speed = 0;
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }
