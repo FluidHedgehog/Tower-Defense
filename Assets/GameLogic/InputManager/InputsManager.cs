@@ -38,8 +38,6 @@ public class InputsManager : MonoBehaviour
         input.Player.Interact.performed += OnInteract;
         input.Player.Interact.canceled += OnInteract;
 
-        // input.Player.Hold.started += OnHold;
-        // input.Player.Hold.canceled += OnHold;
     }
 
     void Update()

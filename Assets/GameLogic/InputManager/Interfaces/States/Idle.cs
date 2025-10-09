@@ -4,11 +4,14 @@ public class Idle : IState
 {
     InputsManager inputManager;
 
-    private Idle(InputsManager input) { inputManager = input; }
+    public Idle(InputsManager input) { inputManager = input; }
 
     public void Enter()
     {
-        //inputManager.clickEvent.AddListener(IdleEvents.DetectHold);
+        inputManager.pointEvent.AddListener(IdleEvents.OnPoint);
+        inputManager.clickEvent.AddListener(IdleEvents.OnInteract);
+        inputManager.holdStartEvent.AddListener(IdleEvents.OnHold);
+        inputManager.holdCancelEvent.AddListener(IdleEvents.OnRelease);
     }
 
     public void Update()
@@ -18,7 +21,10 @@ public class Idle : IState
 
     public void Exit()
     {
-        //inputManager.clickEvent.RemoveListener(IdleEvents.DetectHold);
+        inputManager.pointEvent.RemoveListener(IdleEvents.OnPoint);
+        inputManager.clickEvent.RemoveListener(IdleEvents.OnInteract);
+        inputManager.holdStartEvent.RemoveListener(IdleEvents.OnHold);
+        inputManager.holdCancelEvent.RemoveListener(IdleEvents.OnRelease);
     }
     
 

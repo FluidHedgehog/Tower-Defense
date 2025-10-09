@@ -1,12 +1,17 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField ]Tilemap towerTilemap;
-    
-    List<Vector3Int> availablePositions = new();
+    [SerializeField] public Tilemap towerTilemap;
+    [SerializeField] public Tilemap helperTilemap;
+
+    [SerializeField] TileBase correctTile;
+    [SerializeField] TileBase wrongTile;
+ 
+    public List<Vector3Int> availablePositions = new();
 
     void Start()
     {
@@ -19,5 +24,20 @@ public class GridManager : MonoBehaviour
                 availablePositions.Add(pos);
             }
         }
+
+        GridHelper.Initialize(this);
+    }
+
+    public void SetCorrectTile(Vector3Int tile)
+    {
+        helperTilemap.ClearAllTiles();
+        helperTilemap.SetTile(tile, correctTile);
+    }
+
+
+    public void SetWrongTile(Vector3Int tile)
+    {
+        helperTilemap.ClearAllTiles();
+        helperTilemap.SetTile(tile, wrongTile);
     }
 }
