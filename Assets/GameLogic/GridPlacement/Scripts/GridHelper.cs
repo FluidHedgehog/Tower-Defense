@@ -10,8 +10,16 @@ public static class GridHelper
     }
 
     public static void AlignToGrid(Vector2 mousePos, out Vector3Int tilePos)
-    { 
+    {
+
         tilePos = gridManager.towerTilemap.WorldToCell(mousePos);
+
+    }
+
+    public static Vector3Int ChangeToTile(Vector2 mousePos)
+    {
+        AlignToGrid(mousePos, out Vector3Int tilePos);
+        return tilePos;
     }
 
     public static bool CheckTile(Vector3Int tile)
@@ -28,4 +36,12 @@ public static class GridHelper
         }
     }
 
+    public static bool DetectPosition(Vector3Int tile)
+    {
+        if (gridManager.turretPositions[tile] != null)
+        {
+            return true;
+        }
+        else return false;
+    }
 }

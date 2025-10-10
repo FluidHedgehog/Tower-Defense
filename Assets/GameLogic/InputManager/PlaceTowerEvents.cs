@@ -14,7 +14,7 @@ public static class PlaceTowerEvents
 
     public static void OnPoint(Vector2 mousePos)
     {
-        currentTile = ChangeToTile(mousePos);
+        currentTile = GridHelper.ChangeToTile(mousePos);
         canPlace = GridHelper.CheckTile(currentTile);
     }
 
@@ -23,6 +23,7 @@ public static class PlaceTowerEvents
         if (canPlace)
         {
             turretMover.PlaceTurret(currentTile);
+            ChangeStates.ChangeStateNow(0);
         }
         else
         {
@@ -40,10 +41,6 @@ public static class PlaceTowerEvents
 
     }
 
-    static Vector3Int ChangeToTile(Vector2 mousePos)
-    {
-        GridHelper.AlignToGrid(mousePos, out Vector3Int tilePos);
-        return tilePos;
-    }
+    
 
 }

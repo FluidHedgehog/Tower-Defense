@@ -10,8 +10,9 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] TileBase correctTile;
     [SerializeField] TileBase wrongTile;
- 
+
     public List<Vector3Int> availablePositions = new();
+    public Dictionary<Vector3Int, TurretInstance> turretPositions = new();
 
     void Start()
     {
@@ -26,6 +27,12 @@ public class GridManager : MonoBehaviour
         }
 
         GridHelper.Initialize(this);
+    }
+
+    public void AddTurret(Vector3Int turretPos, GameObject turret)
+    {
+        turretPositions.Add(turretPos, turret.GetComponent<TurretInstance>());
+        availablePositions.Remove(turretPos);
     }
 
     public void SetCorrectTile(Vector3Int tile)

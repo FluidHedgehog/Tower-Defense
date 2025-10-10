@@ -1,4 +1,15 @@
+using System;
 using UnityEngine;
+
+public static class ChangeStates
+{
+    public static event Action<int> OnStateChange;
+
+    public static void ChangeStateNow(int newState)
+    {
+        OnStateChange?.Invoke(newState);
+    }
+}
 
 public class StateMachine : MonoBehaviour
 {
@@ -20,6 +31,8 @@ public class StateMachine : MonoBehaviour
         inputManager.clickEvent.AddListener(OnInteract);
         inputManager.holdStartEvent.AddListener(OnHold);
         inputManager.holdCancelEvent.AddListener(OnRelease);
+
+        ChangeStates.OnStateChange += OnChangeState;
     }
 
     void OnDisable()
@@ -27,12 +40,27 @@ public class StateMachine : MonoBehaviour
         inputManager.pointEvent.RemoveListener(OnPoint);
         inputManager.clickEvent.RemoveListener(OnInteract);
         inputManager.holdStartEvent.RemoveListener(OnHold);
-        inputManager.holdCancelEvent.RemoveListener(OnRelease);        
+        inputManager.holdCancelEvent.RemoveListener(OnRelease);
+
+        ChangeStates.OnStateChange -= OnChangeState;
     }
 
     void Update()
     {
         if (currentState != null) currentState.Update();
+    }
+
+    public void OnChangeState(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                ChangeState(idleState);
+                return;
+            case 1:
+                ChangeState(placeTowerState);
+                return;
+        }
     }
 
     public void ChangeState(IState newState)
@@ -44,7 +72,7 @@ public class StateMachine : MonoBehaviour
 
     void OnPoint(Vector2 mousePos)
     {
-        
+
     }
 
     void OnInteract()
@@ -59,6 +87,6 @@ public class StateMachine : MonoBehaviour
 
     void OnRelease()
     {
-        
+
     }
 }

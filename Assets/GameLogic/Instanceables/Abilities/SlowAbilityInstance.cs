@@ -1,20 +1,22 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
-public class AreaAbilityInstance : AbilityInstance
+public class SlowAbilityInstance : AbilityInstance
 {
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyInstance enemy = other.GetComponent<EnemyInstance>();
+        if (enemy == null) return;
         enemiesInRange.Add(enemy);
-
-        if (!isActive) StartCoroutine(ApplyAreaDamage());
+        if (!isActive) StartCoroutine(ApplyAreaSlow());
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         EnemyInstance enemy = other.GetComponent<EnemyInstance>();
+        if (enemy == null) return;
         enemiesInRange.Remove(enemy);
+        
     }
 
     void CleanQueue()
@@ -28,19 +30,23 @@ public class AreaAbilityInstance : AbilityInstance
         }
     }
 
-    IEnumerator ApplyAreaDamage()
+    IEnumerator ApplyAreaSlow()
     {
         isActive = true;
         while (enemiesInRange.Count > 0)
         {
             yield return new WaitForSeconds(ability.cooldown);
-
             foreach (var enemy in enemiesInRange)
             {
                 if (enemy == null || !enemy.isAlive) { CleanQueue(); }
-                enemy.ApplyDamage(ability.baseValue);
+                if (enemy.isSlowed) continue;
+                else
+                {
+                    StartCoroutine(enemy.ApplySlow(ability.baseValue, ability.howLong));
+                }
             }
         }
         if (enemiesInRange.Count == 0) isActive = false;
     }
 }
+            

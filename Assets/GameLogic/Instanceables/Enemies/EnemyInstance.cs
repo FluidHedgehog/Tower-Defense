@@ -21,6 +21,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [SerializeField] short health;
     [SerializeField] float speed;
     [SerializeField] public bool isAlive = true;
+    [SerializeField] public bool isSlowed;
 
     // Distance variables
     // ---------------------------------------------------------------------------
@@ -99,6 +100,20 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             isAlive = false;
             StartCoroutine(Die());
         }
+    }
+
+    public IEnumerator ApplySlow(short slowValue, float howLong)
+    {
+        isSlowed = true;
+        speed -= slowValue * 0.1f;
+        if (speed <= 0)
+        {
+            speed = 0.1f;
+        }
+        yield return new WaitForSeconds(howLong);
+
+        isSlowed = false;
+        speed += slowValue * 0.1f;
     }
 
     void IMoveable.Dissappear()
