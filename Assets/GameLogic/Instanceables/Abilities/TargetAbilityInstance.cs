@@ -27,6 +27,12 @@ public class TargetAbilityInstance : AbilityInstance
     {
         EnemyInstance enemy = other.GetComponent<EnemyInstance>();
         enemiesInRange.Remove(enemy);
+
+        if (currentTarget == enemy)
+        {
+            currentTarget = null; 
+            ChooseTarget();
+        }
     }
 
     void CleanQueue()
@@ -44,13 +50,14 @@ public class TargetAbilityInstance : AbilityInstance
     {
         while (isActive)
         {
-            if (canShoot && currentTarget != null && currentTarget.isAlive)
+            if (ShouldShootAtCurrentTarget())
             {
+
                 canShoot = false;
                 var projectile = Instantiate(ability.projectile, transform, false);
                 projectile.transform.localPosition = Vector3.zero;
                 projectile.GetComponent<Projectile>().Initialize(currentTarget, ability.baseValue);
-                
+
                 yield return StartCoroutine(ShootCooldown());
             }
             else
@@ -59,6 +66,11 @@ public class TargetAbilityInstance : AbilityInstance
                 yield return null;
             }
         }
+    }
+    
+    bool ShouldShootAtCurrentTarget()
+    {
+        return canShoot && currentTarget != null && currentTarget.isAlive && enemiesInRange.Contains(currentTarget);
     }
 
     void ChooseTarget()
@@ -72,21 +84,5 @@ public class TargetAbilityInstance : AbilityInstance
         }
 
         currentTarget = prioritizedEnemies.Dequeue();
-        //ApplyTargetDamage();
     }
-
-    // void ApplyTargetDamage()
-    // {
-    //     while (isActive)
-    //     {
-    //         if (canShoot && currentTarget != null)
-    //         {
-    //             canShoot = false;
-    //             Instantiate(ability.projectile, gameObject.transform, true).GetComponent<Projectile>().Initialize(currentTarget, ability.baseValue);
-    //             StartCoroutine(ShootCooldown());
-    //             ChooseTarget();
-    //         }
-    //         return;
-    //     }
-    // }
 }

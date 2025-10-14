@@ -3311,6 +3311,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1906630756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &762061373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762061374}
+  - component: {fileID: 762061375}
+  m_Layer: 0
+  m_Name: TurretBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762061374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762061373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1444371751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762061375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762061373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5bb6aae76d1914db0e16b2bf41d5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretBase
+  Thorns0: {fileID: 359672181476186582, guid: 94b26fc864d8d334ba60a41917c57976, type: 3}
+  Plague0: {fileID: 3222854495483887573, guid: b21487576ca583b4a97392b042a15c5e, type: 3}
+  Moon0: {fileID: 5077278624844238799, guid: d90a3f9ab9a0a6147aeed77d15369145, type: 3}
+  Thorns1: {fileID: 0}
+  Plague1: {fileID: 488262088355192270, guid: e6d5d076ce10cb2469db1eaa2bcdcdda, type: 3}
+  Moon1: {fileID: 0}
+  Thorns2: {fileID: 0}
+  Plague2: {fileID: 0}
+  Moon2: {fileID: 0}
+  Forest1: {fileID: 196995414193990108, guid: d69f50f73eae5934a859cccba0136c0a, type: 3}
+  Generosity1: {fileID: 3875896024269589684, guid: 93f61108465294c4694c8bdd818362bb, type: 3}
+  Willow1: {fileID: 0}
+  Forest2: {fileID: 0}
+  Generosity2: {fileID: 0}
+  Willow2: {fileID: 0}
+  Abomination: {fileID: 0}
 --- !u!1 &763435011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3764,7 @@ MonoBehaviour:
   - {fileID: 359429413}
   - {fileID: 610459379}
   - {fileID: 541035634}
-  cooldown: 1
+  cooldown: 5
 --- !u!4 &1016265764
 Transform:
   m_ObjectHideFlags: 0
@@ -14172,6 +14232,7 @@ Transform:
   - {fileID: 1697258282}
   - {fileID: 1016265764}
   - {fileID: 1346158859}
+  - {fileID: 762061374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444981369

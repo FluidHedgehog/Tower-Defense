@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2759490725458485185}
   - component: {fileID: 3819210486142031595}
   m_Layer: 0
-  m_Name: TargetTower
+  m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9929bc59966c02b4cadac415a3d82375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
+  towerType: 0
+  towerKind: 2
 --- !u!1 &5129702651138493522
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5518868, g: 0.94350463, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.038640022, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -295,7 +297,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.039215688, b: 0, a: 0.15686275}
+  m_Color: {r: 0, g: 1, b: 1, a: 0.039215688}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

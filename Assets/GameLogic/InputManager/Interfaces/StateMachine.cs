@@ -80,12 +80,12 @@ public class StateMachine : MonoBehaviour
 
     }
 
-    void OnHold()
+    void OnHold(Vector2 mousePos)
     {
 
     }
 
-    void OnRelease()
+    void OnRelease(Vector2 mousePos)
     {
 
     }

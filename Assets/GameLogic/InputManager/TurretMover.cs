@@ -27,7 +27,12 @@ public class TurretMover : MonoBehaviour
         vector.x += 0.5f;
         vector.y += 0.5f;
 
-        Instantiate(turret, vector, Quaternion.identity);
-        gridManager.AddTurret(tile, turret);
+        GameObject placedTurret = Instantiate(turret, vector, Quaternion.identity);
+        gridManager.AddTurret(tile, placedTurret);
+    }
+
+    public void MoveTurret()
+    {
+        
     }
 }

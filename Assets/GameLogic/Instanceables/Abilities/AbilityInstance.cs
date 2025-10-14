@@ -26,6 +26,7 @@ public class AbilityInstance : MonoBehaviour
         range = gameObject.AddComponent<CircleCollider2D>();
         range.radius = ability.range;
         range.isTrigger = true;
+
         canShoot = true;
 
         showRange.transform.localScale *= ability.range * 2;

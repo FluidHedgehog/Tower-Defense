@@ -8,12 +8,14 @@ public class InputsManager : MonoBehaviour
     public static InputsManager Instance { get; private set; }
 
     public class Vector2Event : UnityEvent<Vector2> { }
-        public Vector2Event pointEvent = new Vector2Event();
+    public Vector2Event pointEvent = new Vector2Event();
+        public Vector2Event holdStartEvent = new Vector2Event();
+        public Vector2Event holdCancelEvent = new Vector2Event();
+
 
     public class ButtonEvent : UnityEvent { }
         public ButtonEvent clickEvent = new ButtonEvent();
-        public ButtonEvent holdStartEvent = new ButtonEvent();
-        public ButtonEvent holdCancelEvent = new ButtonEvent();
+
 
     InputSystem_Actions input;
     Vector2 mousePos;
@@ -76,12 +78,12 @@ public class InputsManager : MonoBehaviour
             if (ctx.started)
             {
                 Debug.Log("Hold!");
-                holdStartEvent.Invoke();
+                holdStartEvent.Invoke(mousePos);
             }
             if (ctx.canceled)
             {
                 Debug.Log("Cancel!");
-                holdCancelEvent.Invoke();
+                holdCancelEvent.Invoke(mousePos);
             }
         }
     }

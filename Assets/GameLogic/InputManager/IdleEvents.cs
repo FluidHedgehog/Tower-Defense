@@ -2,11 +2,10 @@ using UnityEngine;
 
 public static class IdleEvents
 {
-    static Vector3Int currentTile;
-
+#nullable enable
     public static void OnPoint(Vector2 mousePos)
     {
-        currentTile = GridHelper.ChangeToTile(mousePos);
+
     }
 
     public static void OnInteract()
@@ -14,12 +13,23 @@ public static class IdleEvents
 
     }
 
-    public static void OnHold()
+    public static void OnHold(Vector2 mousePos)
     {
+        GameObject? tower = GridHelper.DetectTower(mousePos);
         
+        if (tower == null)
+        {
+            return;
+        }
+        else
+        {
+            TurretMerger.turret = tower;
+
+            ChangeStates.ChangeStateNow(1);
+        }
     }
 
-    public static void OnRelease()
+    public static void OnRelease(Vector2 mousePos)
     {
 
     }

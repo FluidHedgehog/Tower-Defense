@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyType
   health: 248
   speed: 2
-  damage: 0
-  blood: 0
+  damage: 1
+  blood: 1

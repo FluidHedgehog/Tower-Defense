@@ -3,10 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     EnemyInstance target;
-    short damage;
+    int damage;
     [SerializeField] float speed;
 
-    public void Initialize(EnemyInstance instance, short dmg)
+    public void Initialize(EnemyInstance instance, int dmg)
     {
         target = instance;
         damage = dmg;

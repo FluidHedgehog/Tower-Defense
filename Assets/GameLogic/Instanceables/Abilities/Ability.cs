@@ -7,11 +7,16 @@ public class Ability : ScriptableObject
     [Header("Damage, Slow Value, Buff Value")]
     [Tooltip("For slowValue use 1-20")]
     [Range(1, 100)]
-    [SerializeField] public short baseValue;
+    [SerializeField] public int baseValue;
 
     [Header("Range of the effect")]
     [Range(1, 10)]
     [SerializeField] public float range;
+
+    [Header("For Damage Over Time")]
+    [Tooltip("How many times the baseValue damage will be applied")]
+    [Range(1, 20)]
+    [SerializeField] public int cycles;
 
     [Header("How long between shots")]
     [Range(0.05f, 5)]

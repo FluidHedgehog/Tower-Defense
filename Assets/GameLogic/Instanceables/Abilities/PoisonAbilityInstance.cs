@@ -1,23 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class AreaAbilityInstance : AbilityInstance
+public class PoisonAbilityInstance : AbilityInstance
 {
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyInstance enemy = other.GetComponent<EnemyInstance>();
         if (enemy == null) return;
-
         enemiesInRange.Add(enemy);
-
-        if (!isActive) StartCoroutine(ApplyAreaDamage());
+        if (!isActive) StartCoroutine(ApplyPoison());
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         EnemyInstance enemy = other.GetComponent<EnemyInstance>();
         if (enemy == null) return;
-
         enemiesInRange.Remove(enemy);
     }
 
@@ -32,19 +29,20 @@ public class AreaAbilityInstance : AbilityInstance
         }
     }
 
-    IEnumerator ApplyAreaDamage()
+    IEnumerator ApplyPoison()
     {
         isActive = true;
         while (enemiesInRange.Count > 0)
         {
             yield return new WaitForSeconds(ability.cooldown);
-
-            CleanQueue();
-
             foreach (var enemy in enemiesInRange)
             {
-                if (enemy == null || !enemy.isAlive) { continue; }
-                enemy.ApplyDamage(ability.baseValue);
+                if (enemy == null || !enemy.isAlive) { CleanQueue(); }
+                if (enemy.isSlowed) continue;
+                else
+                {
+                    StartCoroutine(enemy.ApplyPoison(ability.cycles, ability.baseValue, ability.howLong));
+                }
             }
         }
         if (enemiesInRange.Count == 0) isActive = false;

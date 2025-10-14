@@ -36,6 +36,11 @@ public static class GridHelper
         }
     }
 
+    public static void HoverMerge(Vector3Int tile)
+    {
+        gridManager.SetMergePossibility(tile);
+    }
+
     public static bool DetectPosition(Vector3Int tile)
     {
         if (gridManager.turretPositions[tile] != null)
@@ -43,5 +48,16 @@ public static class GridHelper
             return true;
         }
         else return false;
+    }
+
+    public static GameObject DetectTower(Vector2 mousePos)
+    {
+        gridManager.turretPositions.TryGetValue(ChangeToTile(mousePos), out GameObject turret);
+
+        if (turret != null)
+        {
+            return turret;
+        }
+        else return null;
     }
 }

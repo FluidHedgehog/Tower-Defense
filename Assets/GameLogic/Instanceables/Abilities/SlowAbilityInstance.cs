@@ -36,9 +36,12 @@ public class SlowAbilityInstance : AbilityInstance
         while (enemiesInRange.Count > 0)
         {
             yield return new WaitForSeconds(ability.cooldown);
+
+            CleanQueue();
+
             foreach (var enemy in enemiesInRange)
             {
-                if (enemy == null || !enemy.isAlive) { CleanQueue(); }
+                if (enemy == null || !enemy.isAlive) { continue; }
                 if (enemy.isSlowed) continue;
                 else
                 {
