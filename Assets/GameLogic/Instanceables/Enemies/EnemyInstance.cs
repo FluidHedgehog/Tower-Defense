@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyInstance : MonoBehaviour, IMoveable
 {
@@ -12,22 +13,24 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [Space(5)]
     [SerializeField] EnemyType type;
     [SerializeField] GameObject bloodPrefab;
+    [SerializeField] Slider sliderUI;
     [HideInInspector] private Path path;
+    
 
     // Enemy variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
     [Header("Enemy variables - DO NOT TOUCH! FOR REFERENCE ONLY!")]
     [Space(5)]
-    [SerializeField] int health;
-    [SerializeField] float speed;
-    [SerializeField] public bool isAlive = true;
-    [SerializeField] public bool isSlowed;
-    [SerializeField] public bool isBloodBoosted;
-    [SerializeField] int boostedBlood;
-    [SerializeField] public bool isDamageBoosted;
-    [SerializeField] int boostedDamage;
-    [SerializeField] public int poisonCycles;
+    [HideInInspector] int health;
+    [HideInInspector] float speed;
+    [HideInInspector] public bool isAlive = true;
+    [HideInInspector] public bool isSlowed;
+    [HideInInspector] public bool isBloodBoosted;
+    [HideInInspector] int boostedBlood;
+    [HideInInspector] public bool isDamageBoosted;
+    [HideInInspector] int boostedDamage;
+    [HideInInspector] public int poisonCycles;
 
     // Distance variables
     // ---------------------------------------------------------------------------
@@ -53,6 +56,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         health = type.health;
         speed = type.speed;
+        sliderUI.maxValue = health;
 
         path = FindFirstObjectByType<Path>();
 
@@ -100,6 +104,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             damage += boostedDamage;
         }
         health -= damage;
+        UpdateSlider(damage);
         ValidateHealth();
     }
 
@@ -109,7 +114,13 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
         while (poisonCycles > 0)
         {
+            if (isDamageBoosted)
+            {
+                damage += boostedDamage;
+            }
+            
             health -= damage;
+            UpdateSlider(damage);
             yield return new WaitForSeconds(cooldown);
         }
     }
@@ -165,8 +176,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
     }
 
+    void UpdateSlider(int damage)
+    {
+        sliderUI.value =- damage;
+    }
+
     void IMoveable.Dissappear()
     {
+        HealthSystemEvents.TriggerHealthRemoved(type.damage);
         Destroy(gameObject);
     }
 
