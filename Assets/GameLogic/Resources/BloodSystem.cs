@@ -5,9 +5,11 @@ public static class BloodSystemEvents
 {
     public static event System.Action<int> OnBloodAdded;
     public static event System.Action<int> OnBloodRemoved;
+    public static event System.Func<int, bool> OnTryCreate;
 
     public static void TriggerBloodAdded(int val) => OnBloodAdded?.Invoke(val);
     public static void TriggerBloodRemoved(int val) => OnBloodRemoved?.Invoke(val);
+    public static bool TriggetBloodTryCreateTower(int val) => OnTryCreate.Invoke(val);
 }
 
 public class BloodSystem : MonoBehaviour
@@ -16,7 +18,7 @@ public class BloodSystem : MonoBehaviour
 
     [SerializeField] int maxBlood;
 
-    int currentBlood { get; set; }
+    public int currentBlood { get; set; }
 
     void ChangeValue()
     {
@@ -55,4 +57,5 @@ public class BloodSystem : MonoBehaviour
     {
         ChangeValue();
     }
+
 }

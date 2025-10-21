@@ -3,50 +3,53 @@ using System.Collections;
 
 public class AreaAbilityInstance : AbilityInstance
 {
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        if (enemy == null) return;
-
-        enemiesInRange.Add(enemy);
-
-        if (!isActive) StartCoroutine(ApplyAreaDamage());
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        if (enemy == null) return;
-
-        enemiesInRange.Remove(enemy);
-    }
-
-    void CleanQueue()
-    {
-        enemiesInRange.RemoveAll(e => e == null || !e.isAlive);
-        prioritizedEnemies.Clear();
-
-        foreach (var enemy in enemiesInRange)
-        {
-            prioritizedEnemies.Enqueue(enemy, -enemy.totalDistance);
-        }
-    }
-
-    IEnumerator ApplyAreaDamage()
+    protected override IEnumerator AbilityCoroutine()
     {
         isActive = true;
         while (enemiesInRange.Count > 0)
         {
             yield return new WaitForSeconds(ability.cooldown);
 
-            CleanQueue();
+            CleanAndRebuildQueue();
 
-            foreach (var enemy in enemiesInRange)
-            {
-                if (enemy == null || !enemy.isAlive) { continue; }
-                enemy.ApplyDamage(ability.baseValue);
-            }
+            ApplyEffectToEnemies();
+
+
         }
         if (enemiesInRange.Count == 0) isActive = false;
+    }
+
+    private void ApplyEffectToEnemies()
+    {
+        foreach (var enemy in enemiesInRange)
+        {
+            if (enemy == null || !enemy.isAlive) { continue; }
+
+            switch (ability.effectType)
+            {
+                case EffectType.Damage:
+                    enemy.ApplyDamage(ability.baseValue);
+                    break;
+
+                case EffectType.Slow:
+                    if (enemy.isSlowed) break;
+                    StartCoroutine(enemy.ApplySlow(ability.baseValue, ability.howLong));
+                    break;
+
+                case EffectType.DamageOverTime:
+                    StartCoroutine(enemy.ApplyPoison(ability.cycles, ability.baseValue, ability.howLong));
+                    break;
+
+                case EffectType.BoostDamage:
+                    if (enemy.isDamageBoosted) break;
+                    StartCoroutine(enemy.ApplyBoostDamage(ability.baseValue, ability.howLong));
+                    break;
+
+                case EffectType.BoostBlood:
+                    if (enemy.isBloodBoosted) break;
+                    StartCoroutine(enemy.ApplyBoostBlood(ability.baseValue, ability.howLong));
+                    break;
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
   m_Name: Plague
   m_EditorClassIdentifier: Assembly-CSharp::Ability
+  effectType: 1
   baseValue: 5
   range: 4
   cycles: 1

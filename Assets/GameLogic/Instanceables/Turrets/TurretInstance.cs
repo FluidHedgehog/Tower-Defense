@@ -9,4 +9,5 @@ public class TurretInstance : MonoBehaviour
     [SerializeField] public TowerType towerType;
     [SerializeField] public TowerKind towerKind;
 
+    [SerializeField] public int cost;
 }

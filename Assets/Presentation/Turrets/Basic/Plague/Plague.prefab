@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2411772580353563208}
   - component: {fileID: 2191414889348960995}
-  - component: {fileID: 5337974777200672458}
+  - component: {fileID: 6668730172014145330}
   m_Layer: 0
   m_Name: AbilityInstance
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5337974777200672458
+--- !u!114 &6668730172014145330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,9 +70,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1767585312510664861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54427dbf7f6d71a4d9c4e7d601aad36b, type: 3}
+  m_Script: {fileID: 11500000, guid: 16a5c1c39ac7086459597e9e757deace, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlowAbilityInstance
+  m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 11400000, guid: 66c83cacc651334419a5637bda190baa, type: 2}
   showRange: {fileID: 4367328729500148141}
   enemiesInRange: []
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 0
   towerKind: 1
+  cost: 10
 --- !u!1 &4367328729500148141
 GameObject:
   m_ObjectHideFlags: 0

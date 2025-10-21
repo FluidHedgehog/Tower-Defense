@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621706332253850478}
   - component: {fileID: 3731175637443127518}
-  - component: {fileID: 5600967317483356603}
+  - component: {fileID: 5558403623779558723}
   m_Layer: 0
   m_Name: AbilityInstance
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5600967317483356603
+--- !u!114 &5558403623779558723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,9 +70,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 965970707517072746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be87566c10d80f54ca7c582e778aeae3, type: 3}
+  m_Script: {fileID: 11500000, guid: 16a5c1c39ac7086459597e9e757deace, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoostBloodAbilityInstance
+  m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 0}
   showRange: {fileID: 1189709393306508789}
   enemiesInRange: []
@@ -306,3 +306,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 0
   towerKind: 4
+  cost: 0

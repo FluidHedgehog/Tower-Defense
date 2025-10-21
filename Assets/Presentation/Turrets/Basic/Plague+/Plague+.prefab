@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 0
   towerKind: 1
+  cost: 0
 --- !u!1 &3928987860752774320
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1199539367418290527}
   - component: {fileID: 6153225138820961683}
-  - component: {fileID: 2450258274316552045}
+  - component: {fileID: 1788897706307829589}
   m_Layer: 0
   m_Name: AbilityInstance
   m_TagString: Untagged
@@ -291,7 +292,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2450258274316552045
+--- !u!114 &1788897706307829589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,9 +301,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6845863069953247406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7789bdcd76440694a83bcc1416b63e2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 16a5c1c39ac7086459597e9e757deace, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoostDamageAbilityInstance
+  m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 0}
   showRange: {fileID: 5809686652130763120}
   enemiesInRange: []

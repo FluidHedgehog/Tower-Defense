@@ -1,88 +1,67 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using Utils;
 
 public class TargetAbilityInstance : AbilityInstance
 {
-    #nullable enable
-    public EnemyInstance? currentTarget { get; set; }
+    public EnemyInstance currentTarget { get; private set; }
+    public bool canShoot { get; private set; } = true;
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected override IEnumerator AbilityCoroutine()
     {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        if (enemy == null) return;
-
-        enemiesInRange.Add(enemy);
-
-        if (!isActive)
+        isActive = true;
+        
+        while (isActive && enemiesInRange.Count > 0)
         {
-            currentTarget = enemy;
-            isActive = true;
-            StartCoroutine(ShootingCoroutine());
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        EnemyInstance enemy = other.GetComponent<EnemyInstance>();
-        enemiesInRange.Remove(enemy);
-
-        if (currentTarget == enemy)
-        {
-            currentTarget = null; 
-            ChooseTarget();
-        }
-    }
-
-    void CleanQueue()
-    {
-        enemiesInRange.RemoveAll(e => e == null || !e.isAlive);
-        prioritizedEnemies.Clear();
-
-        foreach (var enemy in enemiesInRange)
-        {
-            prioritizedEnemies.Enqueue(enemy, -enemy.totalDistance);
-        }
-    }
-
-    IEnumerator ShootingCoroutine()
-    {
-        while (isActive)
-        {
-            if (ShouldShootAtCurrentTarget())
-            {
-
-                canShoot = false;
-                var projectile = Instantiate(ability.projectile, transform, false);
-                projectile.transform.localPosition = Vector3.zero;
-                projectile.GetComponent<Projectile>().Initialize(currentTarget, ability.baseValue);
-
-                yield return StartCoroutine(ShootCooldown());
-            }
-            else
-            {
+            if (currentTarget == null || !currentTarget.isAlive || !enemiesInRange.Contains(currentTarget))
                 ChooseTarget();
+
+            if (ShouldShoot())
+                yield return StartCoroutine(ShootAtTarget());
+            else
                 yield return null;
-            }
         }
-    }
-    
-    bool ShouldShootAtCurrentTarget()
-    {
-        return canShoot && currentTarget != null && currentTarget.isAlive && enemiesInRange.Contains(currentTarget);
+        
+        isActive = false;
+        currentTarget = null;
     }
 
-    void ChooseTarget()
+    private bool ShouldShoot()
     {
-        CleanQueue();
-        if (enemiesInRange.Count == 0)
+        return canShoot && currentTarget != null && currentTarget.isAlive;
+    }
+
+    private IEnumerator ShootAtTarget()
+    {
+        canShoot = false;
+        
+        var projectile = Instantiate(ability.projectile, transform);
+        projectile.transform.localPosition = Vector3.zero;
+        projectile.GetComponent<Projectile>().Initialize(currentTarget, ability.baseValue);
+
+        yield return StartCoroutine(ShootCooldown());
+        canShoot = true;
+    }
+
+    private void ChooseTarget()
+    {
+        CleanAndRebuildQueue();
+        
+        if (prioritizedEnemies.Count == 0)
         {
-            isActive = false;
             currentTarget = null;
             return;
         }
 
         currentTarget = prioritizedEnemies.Dequeue();
+    }
+
+    protected override void OnTriggerExit2D(Collider2D other)
+    {
+        base.OnTriggerExit2D(other);
+        
+        if (currentTarget != null && other.gameObject == currentTarget.gameObject)
+        {
+            currentTarget = null;
+        }
     }
 }
