@@ -56,7 +56,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         health = type.health;
         speed = type.speed;
-        sliderUI.maxValue = health;
+        sliderUI.maxValue = type.health;
+        sliderUI.value = health;
 
         path = FindFirstObjectByType<Path>();
 
@@ -104,7 +105,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             damage += boostedDamage;
         }
         health -= damage;
-        UpdateSlider(damage);
+        UpdateSlider();
         ValidateHealth();
     }
 
@@ -120,7 +121,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             }
             
             health -= damage;
-            UpdateSlider(damage);
+            UpdateSlider();
             yield return new WaitForSeconds(cooldown);
         }
     }
@@ -176,9 +177,9 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
     }
 
-    void UpdateSlider(int damage)
+    void UpdateSlider()
     {
-        sliderUI.value =- damage;
+        sliderUI.value = health;
     }
 
     void IMoveable.Dissappear()
