@@ -304,6 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9929bc59966c02b4cadac415a3d82375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
-  towerType: 0
+  towerType: 1
   towerKind: 4
-  cost: 0
+  cost: 20

@@ -24,8 +24,9 @@ public static class IdleEvents
         else
         {
             TurretMerger.turret = tower;
+            TurretMerger.turretPos = GridHelper.ChangeToTile(mousePos);
 
-            ChangeStates.ChangeStateNow(1);
+            ChangeStates.ChangeStateNow(2);
         }
     }
 

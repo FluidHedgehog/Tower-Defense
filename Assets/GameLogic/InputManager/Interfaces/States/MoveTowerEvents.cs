@@ -1,9 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
-public static class PlaceTowerEvents
+public static class MoveTowerEvents
 {
     static TurretMover turretMover;
     static bool canPlace;
@@ -28,20 +25,26 @@ public static class PlaceTowerEvents
             canMerge = TurretMerger.CanMerge(TurretMerger.turret, TurretMerger.target = GridHelper.DetectTower(mousePos));
             GridHelper.HoverMerge(currentTile);
         }
-        
     }
 
     public static void OnInteract()
     {
         if (canPlace)
         {
-            turretMover.PlaceTurret(currentTile);
+            GridHelper.DestroyTower(TurretMerger.turretPos);
+            if (turretMover == null)
+            {
+                Debug.LogWarning("No turretMover reference!");
+            }
+            turretMover.MoveTurret(currentTile);
+            GridHelper.ClearHelpTiles();
             ChangeStates.ChangeStateNow(0);
         }
         else if (canMerge)
         {
             GridHelper.AlignToGrid(pos, out Vector3Int posi);
             TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
+            GridHelper.ClearHelpTiles();
         }
         else
         {
@@ -58,7 +61,4 @@ public static class PlaceTowerEvents
     {
 
     }
-
-    
-
 }

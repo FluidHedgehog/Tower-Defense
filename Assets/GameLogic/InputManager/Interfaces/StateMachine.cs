@@ -15,14 +15,17 @@ public class StateMachine : MonoBehaviour
 {
     [SerializeField] private IState currentState;
     [SerializeField] private InputsManager inputManager;
+    
 
     public IState idleState;
     public IState placeTowerState;
-
+    public IState moveTowerState;
+ 
     void Start()
     {
         idleState = new Idle(inputManager);
         placeTowerState = new PlaceTower(inputManager);
+        moveTowerState = new MoveTower(inputManager);
     }
 
     void OnEnable()
@@ -60,6 +63,10 @@ public class StateMachine : MonoBehaviour
             case 1:
                 ChangeState(placeTowerState);
                 return;
+            case 2:
+                ChangeState(moveTowerState);
+                return;
+
         }
     }
 

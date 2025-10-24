@@ -5,11 +5,12 @@ public static class BloodSystemEvents
 {
     public static event System.Action<int> OnBloodAdded;
     public static event System.Action<int> OnBloodRemoved;
-    public static event System.Func<int, bool> OnTryCreate;
+    public static event System.Func<int, bool> OnPassValue;
 
     public static void TriggerBloodAdded(int val) => OnBloodAdded?.Invoke(val);
     public static void TriggerBloodRemoved(int val) => OnBloodRemoved?.Invoke(val);
-    public static bool TriggetBloodTryCreateTower(int val) => OnTryCreate.Invoke(val);
+    public static bool TriggerPassValue(int val) => OnPassValue?.Invoke(val) ?? false;
+    
 }
 
 public class BloodSystem : MonoBehaviour
@@ -29,6 +30,7 @@ public class BloodSystem : MonoBehaviour
     {
         BloodSystemEvents.OnBloodAdded += OnBloodAdded;
         BloodSystemEvents.OnBloodRemoved += OnBloodRemoved;
+        BloodSystemEvents.OnPassValue += OnPassValue;
 
         bloodSlider.maxValue = maxBlood;
         currentBlood = maxBlood;
@@ -51,6 +53,15 @@ public class BloodSystem : MonoBehaviour
     {
         currentBlood -= val;
         ValidateBlood();
+    }
+
+    bool OnPassValue(int blood)
+    {
+        if (blood > currentBlood)
+        {
+            return false;
+        }
+        else return true;
     }
 
     void ValidateBlood()

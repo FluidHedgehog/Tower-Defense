@@ -36,6 +36,11 @@ public static class GridHelper
         }
     }
 
+    public static void ClearHelpTiles()
+    {
+        gridManager.helperTilemap.ClearAllTiles();
+    }
+
     public static void HoverMerge(Vector3Int tile)
     {
         gridManager.SetMergePossibility(tile);
@@ -59,5 +64,13 @@ public static class GridHelper
             return turret;
         }
         else return null;
+    }
+
+    public static void DestroyTower(Vector3Int tile)
+    {
+        //Object.Destroy(gridManager.turretPositions[tile].gameObject);
+        gridManager.turretPositions.Remove(tile);
+        gridManager.availablePositions.Add(tile);
+
     }
 }

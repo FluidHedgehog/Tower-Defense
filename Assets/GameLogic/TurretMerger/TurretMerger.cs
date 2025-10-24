@@ -8,6 +8,7 @@ public static class TurretMerger
     public static int situation;
     public static GameObject turret { get; set; }
     public static GameObject target { get; set; }
+    public static Vector3Int turretPos { get; set; }
 
     public static void Initialize(TurretBase tBase)
     {
@@ -53,7 +54,6 @@ public static class TurretMerger
 
         if (selectedGroup + targetGroup >= 3) return false;
         else return true;
-
     }
 
     public static void MergeTowers(GameObject tower1, GameObject tower2, Vector3Int tile)
@@ -77,6 +77,15 @@ public static class TurretMerger
 
         GameObject mergeResult = GetMergeResult(combinedCode, group.Max());
 
+        int mergeCost = mergeResult.GetComponent<TurretInstance>().cost;
+
+        if (!BloodSystemEvents.TriggerPassValue(mergeCost))
+        {
+            return;
+        }
+
+        BloodSystemEvents.TriggerBloodRemoved(mergeCost);
+
         Object.Destroy(tower1);
         Object.Destroy(tower2);
 
@@ -85,6 +94,7 @@ public static class TurretMerger
         mergePosition.y += 0.5f;
 
         Object.Instantiate(mergeResult, mergePosition, Quaternion.identity);
+        ChangeStates.ChangeStateNow(0);
     }
 
     private static GameObject GetMergeResult(int combinedCode, int group)

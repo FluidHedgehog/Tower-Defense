@@ -53,5 +53,4 @@ public class GridManager : MonoBehaviour
         helperTilemap.ClearAllTiles();
         helperTilemap.SetTile(tile, correctTile);
     }
-
 }
