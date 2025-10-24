@@ -49,6 +49,11 @@ public class AreaAbilityInstance : AbilityInstance
                     if (enemy.isBloodBoosted) break;
                     StartCoroutine(enemy.ApplyBoostBlood(ability.baseValue, ability.howLong));
                     break;
+                case EffectType.Stun:
+                    if (enemy.isStunned) break;
+                    StartCoroutine(enemy.ApplyStun(ability.howLong));
+                    break;
+
             }
         }
     }

@@ -18,6 +18,11 @@ public class ManaSystem : MonoBehaviour
 
     [SerializeField] int maxMana;
 
+    [SerializeField] int manaAddValue;
+
+    [SerializeField] float manaAddCooldown;
+    [SerializeField] float manaAddTimer;
+
     public int currentMana { get; set; }
 
     void ChangeValue()
@@ -32,7 +37,7 @@ public class ManaSystem : MonoBehaviour
         ManaSystemEvents.OnPassValue += OnPassValue;
 
         manaSlider.maxValue = maxMana;
-        currentMana = maxMana;
+        currentMana = 0;
         ChangeValue();
     }
 
@@ -43,29 +48,46 @@ public class ManaSystem : MonoBehaviour
         ManaSystemEvents.OnPassValue -= OnPassValue;
     }
 
+    void Update()
+    {
+        if (currentMana == maxMana) return;
+        manaAddTimer += Time.deltaTime;
+        if (manaAddTimer >= manaAddCooldown)
+        {
+            manaAddTimer = 0;
+            OnManaAdded(manaAddValue);
+        }
+    }
+
     void OnManaAdded(int val)
     {
         currentMana += val;
-        ValidateBlood();
+        ValidateMana();
     }
 
     void OnManaRemoved(int val)
     {
         currentMana -= val;
-        ValidateBlood();
+        ValidateMana();
     }
 
-    bool OnPassValue(int blood)
+    bool OnPassValue(int mana)
     {
-        if (blood > currentMana)
+        if (mana > currentMana)
         {
             return false;
         }
         else return true;
     }
 
-    void ValidateBlood()
+    void ValidateMana()
     {
         ChangeValue();
+    }
+
+    public bool CanSpell(int cost)
+    {
+        if (cost <= currentMana) return true;
+        else return false;
     }
 }

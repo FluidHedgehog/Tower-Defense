@@ -27,6 +27,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [HideInInspector] public bool isAlive = true;
     [HideInInspector] public bool isSlowed;
     [HideInInspector] public bool isBloodBoosted;
+    [HideInInspector] public bool isStunned;
     [HideInInspector] int boostedBlood;
     [HideInInspector] public bool isDamageBoosted;
     [HideInInspector] int boostedDamage;
@@ -159,6 +160,19 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
         isSlowed = false;
         speed += slowValue * 0.1f;
+    }
+
+    public IEnumerator ApplyStun(float howLong)
+    {
+        isStunned = true;
+        var currentSpeed = speed;
+
+        speed = 0;
+
+        yield return new WaitForSeconds(howLong);
+
+        isStunned = false;
+        speed = currentSpeed;
     }
 
     void CreateBlood(int blood)

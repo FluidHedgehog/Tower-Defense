@@ -1,7 +1,7 @@
 using UnityEditor.EditorTools;
 using UnityEngine;
 
-public enum EffectType { Damage, Slow, DamageOverTime, BoostDamage, BoostBlood, Single, ChainLightning, Laser }
+public enum EffectType { Damage, Slow, DamageOverTime, BoostDamage, BoostBlood, Stun, Single, }
 
 [CreateAssetMenu(fileName = "Ability", menuName = "Scriptable Objects/Ability")]
 public class Ability : ScriptableObject
@@ -32,14 +32,4 @@ public class Ability : ScriptableObject
 
     [Header("Only for targeting one enemy at time")]
     [SerializeField] public GameObject projectile;
-
-    [Header("For chain Lightning")]
-    public int maxChainTargets;
-    public float chainRange;
-    public int damageReduction;
-
-    [Header("For laser")]
-    public LineRenderer laser;
-    public int maxDamageMultiplier;
-    public float timeToMaxDamage;
 }

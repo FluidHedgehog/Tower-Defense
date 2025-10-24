@@ -20,12 +20,14 @@ public class StateMachine : MonoBehaviour
     public IState idleState;
     public IState placeTowerState;
     public IState moveTowerState;
+    public IState spellCastState;
  
     void Start()
     {
         idleState = new Idle(inputManager);
         placeTowerState = new PlaceTower(inputManager);
         moveTowerState = new MoveTower(inputManager);
+        spellCastState = new SpellState(inputManager);    
     }
 
     void OnEnable()
@@ -65,6 +67,9 @@ public class StateMachine : MonoBehaviour
                 return;
             case 2:
                 ChangeState(moveTowerState);
+                return;
+            case 3:
+                ChangeState(spellCastState);
                 return;
 
         }
