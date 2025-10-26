@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text;
 
+    [SerializeField] GameObject startGameButton;
+    [SerializeField] GameObject skipWaveButton;
+ 
     [Tooltip("Assign path reference!")]
     [SerializeField] Path[] paths;
 
@@ -43,11 +47,13 @@ public class EnemySpawner : MonoBehaviour
     void CreateEnemy()
     {
         var enemy = Instantiate(waves[currentWave].GetRandomEnemy(), GetRandomPath().waypoints[0].transform.position, Quaternion.identity);
-        //enemyManager.AddEnemies(enemy);
+        enemyManager.AddEnemies(enemy);
     }
 
     public void StartGame()
     {
+        startGameButton.SetActive(false);
+        skipWaveButton.SetActive(true);
         StartCoroutine(StartSpawn());
     }
 
@@ -68,12 +74,18 @@ public class EnemySpawner : MonoBehaviour
         currentWave += 1;
         if (currentWave == waves.Length)
         {
-            Won();
+            CheckIfWon();
+            if (delay != null)
+            {
+                StopCoroutine(delay);
+            }
+            yield break;
         }
         else
-
-        yield return new WaitForSeconds(cooldown);
-        StartCoroutine(StartSpawn());
+        {
+            yield return new WaitForSeconds(cooldown);
+            StartCoroutine(StartSpawn());
+        }
     }
 
     public void SkipDelay()
@@ -86,9 +98,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void Won()
+    public void CheckIfWon()
     {
-        Debug.Log("You won!");
+        enemyManager.isLastWave = currentWave == waves.Length;
     }
 
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public static class HealthSystemEvents
@@ -68,6 +69,6 @@ public class HealthSystem : MonoBehaviour
     
     void GameOver()
     {
-        
+        SceneManager.LoadScene("Lost");
     }
 }

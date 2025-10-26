@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
+
+    [SerializeField] EnemySpawner enemySpawner;
+    public bool isLastWave;
     List<EnemyInstance> enemies = new List<EnemyInstance>();
 
     int enhancements;
@@ -14,7 +18,7 @@ public class EnemyManager : MonoBehaviour
 
     void OnDisable()
     {
-
+        BloodSystemEvents.OnBloodAdded -= ValidateEnemies;
     }
 
     public void AddEnemies(GameObject enemy)
@@ -24,17 +28,16 @@ public class EnemyManager : MonoBehaviour
 
     void ValidateEnemies(int i)
     {
-        foreach (var enemy in enemies)
+        enemies.RemoveAll(enemy => !enemy.isAlive || enemy == null);
+
+        if (isLastWave && enemies.Count == 0)
         {
-            if (enemy.isAlive || enemy == null)
-            {
-                enemies.Remove(enemy);
-            }
+            SceneManager.LoadScene("Won");
         }
     }
-    
+
     void EnhanceEnemies()
-    {   
+    {
         foreach (var enemy in enemies)
         {
             if (enemy.enhanced < enhancements)
