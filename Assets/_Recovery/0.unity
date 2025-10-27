@@ -1161,6 +1161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646034339}
+  - component: {fileID: 1646034338}
   - component: {fileID: 1646034337}
   m_Layer: 0
   m_Name: Music
@@ -1266,6 +1267,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &1646034338
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646034336}
+  m_Enabled: 1
 --- !u!4 &1646034339
 Transform:
   m_ObjectHideFlags: 0

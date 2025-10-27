@@ -51,6 +51,12 @@ public class ManaSystem : MonoBehaviour
     void Update()
     {
         if (currentMana == maxMana) return;
+        if (currentMana > maxMana) 
+        {
+            currentMana = maxMana;
+            return; 
+        }
+
         manaAddTimer += Time.deltaTime;
         if (manaAddTimer >= manaAddCooldown)
         {

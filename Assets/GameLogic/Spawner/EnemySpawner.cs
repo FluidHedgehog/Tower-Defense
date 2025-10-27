@@ -59,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator StartSpawn()
     {
+    
         for (int i = 0; i < waves[currentWave].enemiesPerWave; i++)
         {
             CreateEnemy();
@@ -94,7 +95,15 @@ public class EnemySpawner : MonoBehaviour
         {
             StopCoroutine(delay);
             delay = null;
-            StartCoroutine(StartSpawn());
+            currentWave += 1;
+            if (currentWave == waves.Length)
+            {
+                CheckIfWon();
+            }
+            else
+            {
+                StartCoroutine(StartSpawn());
+            }
         }
     }
 

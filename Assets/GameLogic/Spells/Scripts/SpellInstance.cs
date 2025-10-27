@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpellInstance : MonoBehaviour
 {
-    [SerializeField] Spell spell;
+    [SerializeField] public Spell spell;
     [SerializeField] GameObject showRange;
     CircleCollider2D range;
     bool hasTriggered;

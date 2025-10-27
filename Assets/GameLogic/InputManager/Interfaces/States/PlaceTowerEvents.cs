@@ -35,6 +35,7 @@ public static class PlaceTowerEvents
     {
         if (canPlace)
         {
+            GridHelper.DestroyTower(TurretMerger.turretPos);
             turretMover.PlaceTurret(currentTile);
             ChangeStates.ChangeStateNow(0);
             GridHelper.ClearHelpTiles();
