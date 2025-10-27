@@ -304,6 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a5c1c39ac7086459597e9e757deace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 4c698e167884a8a43bad36271708716c, type: 2}
   showRange: {fileID: 5809686652130763120}
   enemiesInRange: []

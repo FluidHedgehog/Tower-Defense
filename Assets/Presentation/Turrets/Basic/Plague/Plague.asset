@@ -16,6 +16,6 @@ MonoBehaviour:
   baseValue: 5
   range: 4
   cycles: 1
-  cooldown: 1
+  cooldown: 0.05
   howLong: 5
   projectile: {fileID: 0}
