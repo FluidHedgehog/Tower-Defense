@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6fbbfa75401cab54bb79aec6e080e4fe
+guid: 3518989e1574c39439468026c27424ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -773331756587047593
-    second: options-button_0
+      213: 2010880187091585833
+    second: mana-mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: options-button_0
+      name: mana-mask_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 837
-        height: 306
+        width: 162
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 755a91b5dd29445f0800000000000000
-      internalID: -773331756587047593
+      spriteID: 92b077540e418eb10800000000000000
+      internalID: 2010880187091585833
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      options-button_0: -773331756587047593
+      mana-mask_0: 2010880187091585833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

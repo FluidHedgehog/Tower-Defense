@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 90e0ad46c521d394d9f308d6eaf81a49
+guid: 6fbbfa75401cab54bb79aec6e080e4fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6176079271743077617
-    second: menu-button-click_0
+      213: -773331756587047593
+    second: options-button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu-button-click_0
+      name: options-button_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fc36e81067d5b550800000000000000
-      internalID: 6176079271743077617
+      spriteID: 755a91b5dd29445f0800000000000000
+      internalID: -773331756587047593
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menu-button-click_0: 6176079271743077617
+      options-button_0: -773331756587047593
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
