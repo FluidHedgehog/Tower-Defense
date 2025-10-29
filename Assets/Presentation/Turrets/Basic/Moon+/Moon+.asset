@@ -18,4 +18,4 @@ MonoBehaviour:
   cycles: 1
   cooldown: 0.5
   howLong: 0.05
-  projectile: {fileID: 0}
+  projectile: {fileID: 3984613707000631527, guid: 546b881c59b2cbd46975bdc8f226921e, type: 3}

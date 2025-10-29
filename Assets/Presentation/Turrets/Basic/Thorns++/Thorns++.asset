@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
-  m_Name: Moon++
+  m_Name: Thorns++
   m_EditorClassIdentifier: Assembly-CSharp::Ability
   effectType: 0
-  baseValue: 100
-  range: 10
+  baseValue: 30
+  range: 7
   cycles: 1
-  cooldown: 0.4
+  cooldown: 0.8
   howLong: 0.05
-  projectile: {fileID: 3984613707000631527, guid: 546b881c59b2cbd46975bdc8f226921e, type: 3}
+  projectile: {fileID: 0}
