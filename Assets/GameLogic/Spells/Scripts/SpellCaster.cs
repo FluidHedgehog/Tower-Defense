@@ -15,6 +15,8 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] ManaSystem manaSystem;
 
     GameObject currentSpell;
+    float cooldownTimer;
+    float currentCooldown;
 
     void OnEnable()
     {
@@ -28,6 +30,14 @@ public class SpellCaster : MonoBehaviour
         SpellCasterEvents.OnCastSpell -= CastSpell;
     }
 
+    void Update()
+    {
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+    }
+
     public void InitializeSpell(GameObject spellPrefab)
     {
 
@@ -38,6 +48,11 @@ public class SpellCaster : MonoBehaviour
         if (spellPrefab.GetComponent<SpellInstance>() == null)
         {
             Debug.LogWarning("No SpellInstance!");
+        }
+        if (cooldownTimer > 0)
+        {
+            Debug.LogWarning("Spell on cooldown!");
+            return;
         }
         if (!manaSystem.CanSpell(spellPrefab.GetComponent<SpellInstance>().cost))
         {
@@ -54,8 +69,15 @@ public class SpellCaster : MonoBehaviour
 
     void CastSpell()
     {
-        currentSpell.GetComponent<SpellInstance>().TriggetEffect();
-        ManaSystemEvents.TriggerManaRemoved(currentSpell.GetComponent<SpellInstance>().cost);
+        SpellInstance spellInstance = currentSpell.GetComponent<SpellInstance>();
+        spellInstance.TriggetEffect();
+        ManaSystemEvents.TriggerManaRemoved(spellInstance.cost);
+        
+        if (spellInstance.spell != null)
+        {
+            cooldownTimer = spellInstance.spell.cooldown;
+        }
+        
         Destroy(currentSpell);
     }
 

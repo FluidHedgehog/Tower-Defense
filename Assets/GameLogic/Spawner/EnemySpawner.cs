@@ -1,59 +1,173 @@
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] EnemyManager enemyManager;
+
+    [SerializeField] TextMeshProUGUI text;
+
+    [SerializeField] GameObject startGameButton;
+    [SerializeField] GameObject skipWaveButton;
+ 
     [Tooltip("Assign path reference!")]
-    [SerializeField] Path path;
+    [SerializeField] Path[] paths;
 
     [Tooltip("Assign waves objects!")]
-    [SerializeField] Wave[] wave;
-
-    private int waveIndex;
-    private int maxWaveIndex;
+    [SerializeField] WaveData[] waves;
 
     [Range(1, 60)]
     [Tooltip("Set cooldown between waves!")]
     [SerializeField] int cooldown;
 
-    void OnEnable()
+    Coroutine delay;
+
+    int currentWave;
+
+
+    void Start()
     {
-        maxWaveIndex = wave.Length - 1;
+        text.text = $" {0} / {waves.Length}";
+        //waves.Length;
     }
 
-    void OnDisable()
+    void UpdateText()
     {
-
+        text.text = $" {currentWave + 1} / {waves.Length}";
     }
 
-    public void StartSpawner()
+    Path GetRandomPath()
     {
-        StartCoroutine(Spawner());
+        return paths[Random.Range(0, paths.Length)];
     }
 
-    public IEnumerator  Spawner()
+    void CreateEnemy()
     {
-        var currentWave = wave[waveIndex];
+        var enemy = Instantiate(waves[currentWave].GetRandomEnemy(), GetRandomPath().waypoints[0].transform.position, Quaternion.identity);
+        enemyManager.AddEnemies(enemy);
+    }
 
-        for (int i = currentWave.quantity; i > 0; i--)
+    public void StartGame()
+    {
+        startGameButton.SetActive(false);
+        skipWaveButton.SetActive(true);
+        StartCoroutine(StartSpawn());
+    }
+
+    IEnumerator StartSpawn()
+    {
+    
+        for (int i = 0; i < waves[currentWave].enemiesPerWave; i++)
         {
-            CreateEnemy(currentWave.enemyPrefab);
-            yield return new WaitForSeconds(currentWave.cooldown);
+            CreateEnemy();
+            yield return new WaitForSeconds(waves[currentWave].spawnDelay);
         }
 
-        waveIndex++;
-        if (waveIndex <= maxWaveIndex)
+        UpdateText();
+        delay = StartCoroutine(WaveDelay());
+    }
+
+    IEnumerator WaveDelay()
+    {
+        currentWave += 1;
+        if (currentWave == waves.Length)
+        {
+            CheckIfWon();
+            if (delay != null)
+            {
+                StopCoroutine(delay);
+            }
+            yield break;
+        }
+        else
         {
             yield return new WaitForSeconds(cooldown);
-            StartCoroutine(Spawner());
+            StartCoroutine(StartSpawn());
         }
     }
 
-
-    public void CreateEnemy(GameObject enemy)
+    public void SkipDelay()
     {
-        Instantiate(enemy, path.waypoints[0].transform.position, Quaternion.identity);
+        if (delay != null)
+        {
+            StopCoroutine(delay);
+            delay = null;
+            currentWave += 1;
+            if (currentWave == waves.Length)
+            {
+                CheckIfWon();
+            }
+            else
+            {
+                StartCoroutine(StartSpawn());
+            }
+        }
     }
+
+    public void CheckIfWon()
+    {
+        enemyManager.isLastWave = currentWave == waves.Length;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // void OnEnable()
+    // {
+    //     maxWaveIndex = wave.Length - 1;
+    // }
+
+    // void OnDisable()
+    // {
+
+    // }
+
+    // public void StartSpawner()
+    // {
+    //     StartCoroutine(Spawner());
+    // }
+
+    // public IEnumerator  Spawner()
+    // {
+    //     var currentWave = wave[waveIndex];
+
+    //     for (int i = currentWave.quantity; i > 0; i--)
+    //     {
+    //         CreateEnemy(currentWave.enemyPrefab);
+    //         yield return new WaitForSeconds(currentWave.cooldown);
+    //     }
+
+    //     waveIndex++;
+    //     if (waveIndex <= maxWaveIndex)
+    //     {
+    //         yield return new WaitForSeconds(cooldown);
+    //         StartCoroutine(Spawner());
+    //     }
+    // }
+
+
+
 
 }

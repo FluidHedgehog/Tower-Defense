@@ -42,6 +42,7 @@ public static class MoveTowerEvents
         }
         else if (canMerge)
         {
+            GridHelper.DestroyTower(TurretMerger.turretPos);
             GridHelper.AlignToGrid(pos, out Vector3Int posi);
             TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
             GridHelper.ClearHelpTiles();

@@ -32,6 +32,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [HideInInspector] public bool isDamageBoosted;
     [HideInInspector] int boostedDamage;
     [HideInInspector] public int poisonCycles;
+    [HideInInspector] public int enhanced;
 
     // Distance variables
     // ---------------------------------------------------------------------------
@@ -189,6 +190,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             //CreateBlood(type.blood);
             StartCoroutine(Die());
         }
+    }
+
+    public void Enhance(int enh)
+    {
+        enhanced += enh;
+
+        speed += 0.10f;
+
     }
 
     void UpdateSlider()
