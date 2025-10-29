@@ -18667,7 +18667,7 @@ MonoBehaviour:
   Forest2: {fileID: 0}
   Generosity2: {fileID: 0}
   Willow2: {fileID: 0}
-  Abomination: {fileID: 0}
+  Abomination: {fileID: 24832624224519528, guid: 9a05c3e898f8cd347969c1838bd715a1, type: 3}
 --- !u!1 &763435011
 GameObject:
   m_ObjectHideFlags: 0
@@ -43871,8 +43871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7c1c939eea0e64da7111dc72f2b0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
-  enemySpawner: {fileID: 0}
+  enemySpawner: {fileID: 1016265763}
   isLastWave: 0
+  enhancements: 0
 --- !u!4 &1421609335
 Transform:
   m_ObjectHideFlags: 0
