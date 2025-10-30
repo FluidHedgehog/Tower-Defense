@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588c651339c69504fa65ac48052e9777, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
-  spawnDelay: 1.5
+  spawnDelay: 0.5
   enemyTypes:
   - enemyPrefab: {fileID: 10851667923707881, guid: 6fd0aedfd22125f468cf24cbb4f83d74, type: 3}
     spawnChance: 1
