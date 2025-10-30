@@ -18657,7 +18657,7 @@ MonoBehaviour:
   Moon0: {fileID: 5077278624844238799, guid: d90a3f9ab9a0a6147aeed77d15369145, type: 3}
   Thorns1: {fileID: 0}
   Plague1: {fileID: 488262088355192270, guid: e6d5d076ce10cb2469db1eaa2bcdcdda, type: 3}
-  Moon1: {fileID: 0}
+  Moon1: {fileID: 4047964540864104337, guid: 91c326e8e3a35c947bb988d06e91814f, type: 3}
   Thorns2: {fileID: 0}
   Plague2: {fileID: 0}
   Moon2: {fileID: 0}

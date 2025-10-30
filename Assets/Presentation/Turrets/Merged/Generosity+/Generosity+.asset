@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6b122b4b2225a4486f0ab501f1558b, type: 3}
-  m_Name: Zombie
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyType
-  health: 249
-  speed: 2
-  damage: 1
-  blood: 1
+  m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
+  m_Name: Generosity+
+  m_EditorClassIdentifier: Assembly-CSharp::Ability
+  effectType: 0
+  baseValue: 25
+  range: 8
+  cycles: 1
+  cooldown: 0.05
+  howLong: 0.05
+  projectile: {fileID: 0}
