@@ -39,14 +39,16 @@ public class EnemySpawner : MonoBehaviour
         text.text = $" {currentWave + 1} / {waves.Length}";
     }
 
-    Path GetRandomPath()
+    Path GetRandomPath(int random)
     {
-        return paths[Random.Range(0, paths.Length)];
+        return paths[random];
     }
 
     void CreateEnemy()
     {
-        var enemy = Instantiate(waves[currentWave].GetRandomEnemy(), GetRandomPath().waypoints[0].transform.position, Quaternion.identity);
+        var randomPath = Random.Range(0, paths.Length);
+        var enemy = Instantiate(waves[currentWave].GetRandomEnemy(), (Vector2)GetRandomPath(randomPath).waypoints[0].transform.position, Quaternion.identity);
+        enemy.GetComponent<EnemyInstance>().Initialize(paths[randomPath]);
         enemyManager.AddEnemies(enemy);
     }
 

@@ -29,28 +29,30 @@ public class TurretMover : MonoBehaviour
 
     public void PlaceTurret(Vector3Int tile)
     {
-        var vector = Align(tile);
+        GridHelper.SetToWorld(tile, out Vector3 worldPos);
+
+        //var vector = Align(worldPos);
 
         BloodSystemEvents.TriggerBloodRemoved(cost);
 
-        GameObject placedTurret = Instantiate(turret, vector, Quaternion.identity);
+        GameObject placedTurret = Instantiate(turret, worldPos, Quaternion.identity);
         gridManager.AddTurret(tile, placedTurret);
     }
 
     public void MoveTurret(Vector3Int tile)
     {
-        var vector = Align(tile);
+        GridHelper.SetToWorld(tile, out Vector3 worldPos);
 
         if (TurretMerger.turret == null)
         {
             Debug.LogWarning("No turret in turret merger!");
         }
         GameObject placedTurret = TurretMerger.turret;
-        placedTurret.transform.position = vector;
+        placedTurret.transform.position = worldPos;
         gridManager.AddTurret(tile, placedTurret);
     }
 
-    Vector3 Align(Vector3Int tile)
+    Vector3 Align(Vector3 tile)
     {
         Vector3 vector = tile;
         vector.x += 0.5f;

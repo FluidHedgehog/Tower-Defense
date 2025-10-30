@@ -14,7 +14,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [SerializeField] EnemyType type;
     [SerializeField] GameObject bloodPrefab;
     [SerializeField] Slider sliderUI;
-    [HideInInspector] private Path path;
+    [HideInInspector] public Path path;
     
 
     // Enemy variables
@@ -61,12 +61,19 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         sliderUI.maxValue = type.health;
         sliderUI.value = health;
 
-        path = FindFirstObjectByType<Path>();
+        //path = FindFirstObjectByType<Path>();
 
-        transform.position = path.waypoints[0].transform.position;
-        currentWaypoint = path.waypoints[1].transform.position;
-        nextWaypoint = path.waypoints[2].transform.position;
-        finalWaypoint = path.GetFinalWaypoint();
+
+    }
+
+    public void Initialize(Path path)
+    {
+        this.path = path;
+
+        transform.position = (Vector2)path.waypoints[0].transform.position;
+        currentWaypoint = (Vector2)path.waypoints[1].transform.position;
+        nextWaypoint = (Vector2)path.waypoints[2].transform.position;
+        finalWaypoint = (Vector2)path.GetFinalWaypoint();
     }
 
     void Update()
@@ -84,15 +91,15 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
     void IMoveable.GoToNextWaypoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, Time.deltaTime * speed);
+        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, Time.deltaTime * speed);
 
-        if (Vector3.Distance(transform.position, finalWaypoint) < 0.1f)
+        if (Vector2.Distance(transform.position, finalWaypoint) < 0.1f)
         {
             ((IMoveable)this).Dissappear();
             return;
         }
 
-        if (Vector3.Distance(transform.position, currentWaypoint) < 0.1f)
+        if (Vector2.Distance(transform.position, currentWaypoint) < 0.1f)
         {
             currentWaypoint = nextWaypoint;
             nextWaypoint = path.GetNextWaypoint(nextWaypointIndex);

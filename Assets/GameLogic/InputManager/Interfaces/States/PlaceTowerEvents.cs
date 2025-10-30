@@ -42,7 +42,8 @@ public static class PlaceTowerEvents
         }
         else if (canMerge)
         {
-            GridHelper.AlignToGrid(pos, out Vector3Int posi);
+            var posi = GridHelper.ChangeToTile(pos);
+            //GridHelper.AlignToGrid(pos, out Vector3Int posi);
             TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
             GridHelper.ClearHelpTiles();
         }

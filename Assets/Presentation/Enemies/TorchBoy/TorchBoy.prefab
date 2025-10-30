@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 10851667923707881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03294, y: -0.96693, z: 0}
+  m_LocalPosition: {x: -3.03294, y: -0.96693, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -110,6 +110,7 @@ MonoBehaviour:
   type: {fileID: 11400000, guid: 83c82caf9eb1ff442811c269837ce27c, type: 2}
   bloodPrefab: {fileID: 4551502692998196769, guid: 4a7421007f44841408165b7672bf2176, type: 3}
   sliderUI: {fileID: 7903065375652882074}
+  path: {fileID: 0}
   isAlive: 1
   isSlowed: 0
   isBloodBoosted: 0

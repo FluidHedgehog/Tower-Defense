@@ -16,6 +16,14 @@ public static class GridHelper
 
     }
 
+    public static void SetToWorld(Vector3Int tilePos, out Vector3 worldPos)
+    {
+        worldPos = gridManager.towerTilemap.CellToWorld(tilePos);
+
+        worldPos.x += 0.5f;
+        worldPos.y += 0.5f;
+    }
+
     public static Vector3Int ChangeToTile(Vector2 mousePos)
     {
         AlignToGrid(mousePos, out Vector3Int tilePos);
@@ -59,11 +67,30 @@ public static class GridHelper
     {
         gridManager.turretPositions.TryGetValue(ChangeToTile(mousePos), out GameObject turret);
 
-        if (turret != null)
+        if (turret != null && turret.scene.IsValid())
         {
+
             return turret;
         }
-        else return null;
+        else
+        {
+            if (turret == null)
+            {
+                Debug.LogWarning("Turret null!");
+            }
+            else
+            {
+                Debug.LogWarning("Turret not valid!");
+            }
+            
+            return null;
+        }
+    }
+
+    public static void AddTurret(Vector3Int tile, GameObject placedTurret)
+    {
+        DestroyTower(tile);
+        gridManager.AddTurret(tile, placedTurret);
     }
 
     public static void DestroyTower(Vector3Int tile)

@@ -284,9 +284,9 @@ Transform:
   m_GameObject: {fileID: 8696824365998868160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.35366, y: -0.69041, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7189229759706381789}
   - {fileID: 5626454246605407712}
@@ -306,4 +306,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 2
   towerKind: 2
-  cost: 45
+  cost: 20
