@@ -19678,16 +19678,14 @@ MonoBehaviour:
   paths:
   - {fileID: 1486987208}
   waves:
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  - {fileID: 11400000, guid: 8c769e7d816e79449b21cb2bef405bae, type: 2}
-  cooldown: 10
+  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
+  - {fileID: 11400000, guid: d926914417773b046b81705faa1cadc9, type: 2}
+  - {fileID: 11400000, guid: dce20e8dd1bcf9141bfb35128f3b971b, type: 2}
+  - {fileID: 11400000, guid: 9b162a838ec96e0458f228eb8bca3a14, type: 2}
+  - {fileID: 11400000, guid: d774fdb79cbf6334c900f3f9bc601818, type: 2}
+  - {fileID: 11400000, guid: feea9fb3c447b2d408fc2fe53bec62bb, type: 2}
+  - {fileID: 11400000, guid: dccef996747d0fe449ae7d6554cd7a59, type: 2}
+  cooldown: 30
 --- !u!4 &1016265764
 Transform:
   m_ObjectHideFlags: 0
