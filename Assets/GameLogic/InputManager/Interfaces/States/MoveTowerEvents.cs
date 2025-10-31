@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public static class MoveTowerEvents
 {
@@ -36,13 +37,17 @@ public static class MoveTowerEvents
             {
                 Debug.LogWarning("No turretMover reference!");
             }
+            //GridHelper.SetToWorld(currentTile, out Vector3 worldPos);
             turretMover.MoveTurret(currentTile);
+            
             GridHelper.ClearHelpTiles();
             ChangeStates.ChangeStateNow(0);
         }
         else if (canMerge)
         {
-            GridHelper.AlignToGrid(pos, out Vector3Int posi);
+            GridHelper.DestroyTower(TurretMerger.turretPos);
+
+            var posi = GridHelper.ChangeToTile(pos);
             TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
             GridHelper.ClearHelpTiles();
         }
@@ -61,4 +66,6 @@ public static class MoveTowerEvents
     {
 
     }
+
+
 }

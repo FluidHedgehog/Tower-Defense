@@ -20,7 +20,7 @@ public static class TurretMerger
         var kind = turret.GetComponent<TurretInstance>().towerType;
         return kind switch
         {
-            TowerType.Basic =>0,
+            TowerType.Basic => 0,
             TowerType.Upgraded => 1,
             TowerType.Abomination or TowerType.Mighty => 2,
             _ => 2
@@ -50,7 +50,7 @@ public static class TurretMerger
         int selectedGroup = GetMergeGroup(selected);
         int targetGroup = GetMergeGroup(target);
 
-        if (selectedGroup == 2 || targetGroup == 2) return false;
+        if (selectedGroup == 2 && targetGroup == 2) return false;
 
         if (selectedGroup + targetGroup >= 3) return false;
         else return true;
@@ -89,11 +89,15 @@ public static class TurretMerger
         Object.Destroy(tower1);
         Object.Destroy(tower2);
 
-        Vector3 mergePosition = tile;
-        mergePosition.x += 0.5f;
-        mergePosition.y += 0.5f;
+        GridHelper.SetToWorld(tile, out Vector3 worldPos);
 
-        Object.Instantiate(mergeResult, mergePosition, Quaternion.identity);
+        Vector3 mergePosition = worldPos;
+        // mergePosition.x += 0.5f;
+        // mergePosition.y += 0.5f;
+
+        //GridHelper.AddTurret(tile, mergeResult);
+        GameObject currentObj = Object.Instantiate(mergeResult, mergePosition, Quaternion.identity);
+        GridHelper.AddTurret(tile, currentObj);
         ChangeStates.ChangeStateNow(0);
     }
 
@@ -101,7 +105,7 @@ public static class TurretMerger
     {
         switch (combinedCode)
         {
-            case 000:
+            case 0:
                 {
                     return group switch
                     {
@@ -131,22 +135,22 @@ public static class TurretMerger
                     };
                 }
 
-            case 001 or 100:
+            case 1 or 100:
                 {
                     return group switch //Thorns + Plague
                     {
                         0 => turretBase.Forest1,
-                        1 => turretBase.Forest2,
+                        //1 => turretBase.Forest2,
                         _ => null
                     };
                 } 
                 
-            case 002 or 200:
+            case 2 or 200:
                 {
                     return group switch //Moon + Thorns
                     {
                         0 => turretBase.Willow1,
-                        1 => turretBase.Willow2,
+                        //1 => turretBase.Willow2,
                         _ => null
                     };
                 } 
@@ -156,10 +160,34 @@ public static class TurretMerger
                     return group switch //Moon + Plague
                     {
                         0 => turretBase.Generosity1,
-                        1 => turretBase.Generosity2,
+                        //1 => turretBase.Generosity2,
                         _ => null
                     };
                 } 
+            case 111 or 1101 or 211 or 1102:
+                {
+                    return group switch
+                    {
+                        1 => turretBase.Generosity2,
+                        _ => null
+                    };
+                }
+            case 1000 or 10 or 1001 or 110:
+                {
+                    return group switch
+                    {
+                        1 => turretBase.Forest2,
+                        _ => null
+                    };
+                }
+            case 1200 or 12 or 212 or 1202:
+                {
+                    return group switch
+                    {
+                        1 => turretBase.Willow2,
+                        _ => null
+                    };
+                }
                 
             case int: { return turretBase.Abomination; }
         }

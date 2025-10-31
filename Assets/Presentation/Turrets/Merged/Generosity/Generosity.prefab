@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a5c1c39ac7086459597e9e757deace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 2b8bf375fe5fd4c41b4d198be61779f4, type: 2}
   showRange: {fileID: 1189709393306508789}
   enemiesInRange: []
 --- !u!1 &1189709393306508789
@@ -249,7 +249,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.9660611, b: 1, a: 1}
+  m_Color: {r: 0.95869803, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -284,9 +284,9 @@ Transform:
   m_GameObject: {fileID: 3875896024269589684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.68936, y: 0.19653, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9083308209216178012}
   - {fileID: 621706332253850478}

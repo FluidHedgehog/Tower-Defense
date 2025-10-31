@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public bool isLastWave;
     List<EnemyInstance> enemies = new List<EnemyInstance>();
 
-    int enhancements;
+    public int enhancements;
 
     void OnEnable()
     {
@@ -34,9 +34,11 @@ public class EnemyManager : MonoBehaviour
         {
             SceneManager.LoadScene("Won");
         }
+
+        EnhanceEnemies();
     }
 
-    void EnhanceEnemies()
+    public void EnhanceEnemies()
     {
         foreach (var enemy in enemies)
         {
@@ -44,6 +46,14 @@ public class EnemyManager : MonoBehaviour
             {
                 enemy.Enhance(1);
             }
+        }
+    }
+
+    public void DamageAll(int damage)
+    {
+        foreach (var enemy in enemies)
+        {
+            enemy.ApplyDamage(damage);
         }
     }
 }

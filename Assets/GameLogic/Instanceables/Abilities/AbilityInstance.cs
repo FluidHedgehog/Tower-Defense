@@ -22,11 +22,11 @@ public abstract class AbilityInstance : MonoBehaviour
         range.isTrigger = true;
 
         showRange.transform.localScale *= ability.range * 2;
-
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (!other.TryGetComponent<EnemyInstance>(out var enemy)) return;
 
         enemiesInRange.Add(enemy);
@@ -36,6 +36,7 @@ public abstract class AbilityInstance : MonoBehaviour
 
     protected virtual void OnTriggerExit2D(Collider2D other)
     {
+
         if (!other.TryGetComponent<EnemyInstance>(out var enemy)) return;
 
         enemiesInRange.Remove(enemy);

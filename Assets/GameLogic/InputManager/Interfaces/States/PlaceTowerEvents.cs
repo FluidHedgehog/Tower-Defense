@@ -35,13 +35,15 @@ public static class PlaceTowerEvents
     {
         if (canPlace)
         {
+            GridHelper.DestroyTower(TurretMerger.turretPos);
             turretMover.PlaceTurret(currentTile);
             ChangeStates.ChangeStateNow(0);
             GridHelper.ClearHelpTiles();
         }
         else if (canMerge)
         {
-            GridHelper.AlignToGrid(pos, out Vector3Int posi);
+            var posi = GridHelper.ChangeToTile(pos);
+            //GridHelper.AlignToGrid(pos, out Vector3Int posi);
             TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
             GridHelper.ClearHelpTiles();
         }
