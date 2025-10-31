@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public static class MoveTowerEvents
@@ -16,45 +17,17 @@ public static class MoveTowerEvents
 
     public static void OnPoint(Vector2 mousePos)
     {
-        pos = mousePos;
-        currentTile = GridHelper.ChangeToTile(mousePos);
-
-        canPlace = GridHelper.CheckTile(currentTile);
+        CheckTileAndPlacement(mousePos);
 
         if (TurretMerger.turret != null)
         {
-            canMerge = TurretMerger.CanMerge(TurretMerger.turret, TurretMerger.target = GridHelper.DetectTower(mousePos));
-            GridHelper.HoverMerge(currentTile);
+            CheckMerge(mousePos);
         }
     }
 
     public static void OnInteract()
     {
-        if (canPlace)
-        {
-            GridHelper.DestroyTower(TurretMerger.turretPos);
-            if (turretMover == null)
-            {
-                Debug.LogWarning("No turretMover reference!");
-            }
-            //GridHelper.SetToWorld(currentTile, out Vector3 worldPos);
-            turretMover.MoveTurret(currentTile);
-            
-            GridHelper.ClearHelpTiles();
-            ChangeStates.ChangeStateNow(0);
-        }
-        else if (canMerge)
-        {
-            GridHelper.DestroyTower(TurretMerger.turretPos);
 
-            var posi = GridHelper.ChangeToTile(pos);
-            TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, posi);
-            GridHelper.ClearHelpTiles();
-        }
-        else
-        {
-            return;
-        }
     }
 
     public static void OnHold(Vector2 mousePos)
@@ -64,7 +37,56 @@ public static class MoveTowerEvents
 
     public static void OnRelease(Vector2 mousePos)
     {
+        ChangeStates.ChangeStateNow(0);
+        GridHelper.ClearHelpTiles();
+        if (canMerge)
+        {
+            OnMergeTower();
+        }
+        else if (canPlace)
+        {
+            OnPlaceTower();
+        }
+        
 
+        return;
+    }
+
+    static void CheckTileAndPlacement(Vector2 mousePos)
+    {
+        pos = mousePos;
+        currentTile = GridHelper.ChangeToTile(mousePos);
+
+        canPlace = GridHelper.CheckTile(currentTile);
+    }
+
+    static void CheckMerge(Vector2 mousePos)
+    {
+        canMerge = TurretMerger.CanMerge(TurretMerger.turret, TurretMerger.target = GridHelper.DetectTower(mousePos));
+        GridHelper.HoverMerge(currentTile);
+    }
+
+    static void OnPlaceTower()
+    {
+        var isPlaced = turretMover.MoveTurret(currentTile);
+
+        if (isPlaced)
+        {
+            GridHelper.DestroyTower(TurretMerger.turretPos);
+        }
+        //GridHelper.SetToWorld(currentTile, out Vector3 worldPos);
+        
+    }
+
+    static void OnMergeTower()
+    {
+        var isMerged = TurretMerger.MergeTowers(TurretMerger.turret, TurretMerger.target, GridHelper.ChangeToTile(pos));
+
+        if (isMerged)
+        {
+            GridHelper.DestroyTower(TurretMerger.turretPos);
+        }
+        //ChangeStates.ChangeStateNow(0);
     }
 
 

@@ -15,6 +15,21 @@ public static class TurretMerger
         turretBase = tBase;
     }
 
+    public static bool CanMerge(GameObject selected, GameObject target)
+    {
+        if (selected == null || target == null) return false;
+
+        if (selected == target) return false;
+
+        int selectedGroup = GetMergeGroup(selected);
+        int targetGroup = GetMergeGroup(target);
+
+        if (selectedGroup == 2 && targetGroup == 2) return false;
+
+        if (selectedGroup + targetGroup >= 3) return false;
+        else return true;
+    }
+
     public static int GetMergeGroup(GameObject turret)
     {
         var kind = turret.GetComponent<TurretInstance>().towerType;
@@ -43,30 +58,19 @@ public static class TurretMerger
         };
     }
 
-    public static bool CanMerge(GameObject selected, GameObject target)
+    public static bool MergeTowers(GameObject tower1, GameObject tower2, Vector3Int tile)
     {
-        if (selected == null || target == null) return false;
+        
 
-        int selectedGroup = GetMergeGroup(selected);
-        int targetGroup = GetMergeGroup(target);
-
-        if (selectedGroup == 2 && targetGroup == 2) return false;
-
-        if (selectedGroup + targetGroup >= 3) return false;
-        else return true;
-    }
-
-    public static void MergeTowers(GameObject tower1, GameObject tower2, Vector3Int tile)
-    {
         if (!CanMerge(tower1, tower2))
         {
-            return;
+            return false;
         }
 
         if(tower1.scene.name == null || tower2.scene.name == null)
         {
             Debug.LogError("Cannot merge prefab assets!");
-            return;
+            return false;
         }
 
         int code1 = GetMergeCode(tower1);
@@ -81,7 +85,7 @@ public static class TurretMerger
 
         if (!BloodSystemEvents.TriggerPassValue(mergeCost))
         {
-            return;
+            return false;
         }
 
         BloodSystemEvents.TriggerBloodRemoved(mergeCost);
@@ -98,7 +102,8 @@ public static class TurretMerger
         //GridHelper.AddTurret(tile, mergeResult);
         GameObject currentObj = Object.Instantiate(mergeResult, mergePosition, Quaternion.identity);
         GridHelper.AddTurret(tile, currentObj);
-        ChangeStates.ChangeStateNow(0);
+        return true;
+        //ChangeStates.ChangeStateNow(0);
     }
 
     private static GameObject GetMergeResult(int combinedCode, int group)
@@ -140,7 +145,7 @@ public static class TurretMerger
                     return group switch //Thorns + Plague
                     {
                         0 => turretBase.Forest1,
-                        //1 => turretBase.Forest2,
+                        1 => turretBase.Forest2,
                         _ => null
                     };
                 } 
@@ -150,7 +155,7 @@ public static class TurretMerger
                     return group switch //Moon + Thorns
                     {
                         0 => turretBase.Willow1,
-                        //1 => turretBase.Willow2,
+                        1 => turretBase.Willow2,
                         _ => null
                     };
                 } 
@@ -160,7 +165,7 @@ public static class TurretMerger
                     return group switch //Moon + Plague
                     {
                         0 => turretBase.Generosity1,
-                        //1 => turretBase.Generosity2,
+                        1 => turretBase.Generosity2,
                         _ => null
                     };
                 } 

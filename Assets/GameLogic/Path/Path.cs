@@ -47,18 +47,18 @@ public class Path : MonoBehaviour
         }
     }
 
-    public Vector3 GetNextWaypoint(int waypoint)
+    public GameObject GetNextWaypoint(int waypoint)
     {
         if (waypoints.ContainsKey(waypoint + 1))
-            return waypoints[waypoint + 1].transform.position;
+            return waypoints[waypoint + 1];
         else
             return GetFinalWaypoint();
 
     }
 
-    public Vector3 GetFinalWaypoint()
+    public GameObject GetFinalWaypoint()
     {
-        return waypoints.Values.Last().transform.position;
+        return waypoints.Values.Last();
     }
 
 }
