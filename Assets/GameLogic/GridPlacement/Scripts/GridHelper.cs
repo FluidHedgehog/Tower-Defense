@@ -20,8 +20,8 @@ public static class GridHelper
     {
         worldPos = gridManager.towerTilemap.CellToWorld(tilePos);
 
-        worldPos.x += 0.5f;
-        worldPos.y += 0.5f;
+        worldPos.x += 1f;
+        worldPos.y += 1f;
     }
 
     public static Vector3Int ChangeToTile(Vector2 mousePos)

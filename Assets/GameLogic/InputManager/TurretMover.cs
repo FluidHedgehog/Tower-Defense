@@ -27,7 +27,7 @@ public class TurretMover : MonoBehaviour
         else return;
     }
 
-    public void PlaceTurret(Vector3Int tile)
+    public bool PlaceTurret(Vector3Int tile)
     {
         GridHelper.SetToWorld(tile, out Vector3 worldPos);
 
@@ -37,19 +37,22 @@ public class TurretMover : MonoBehaviour
 
         GameObject placedTurret = Instantiate(turret, worldPos, Quaternion.identity);
         gridManager.AddTurret(tile, placedTurret);
+        return true;
     }
 
-    public void MoveTurret(Vector3Int tile)
+    public bool MoveTurret(Vector3Int tile)
     {
         GridHelper.SetToWorld(tile, out Vector3 worldPos);
 
         if (TurretMerger.turret == null)
         {
             Debug.LogWarning("No turret in turret merger!");
+            return false;
         }
         GameObject placedTurret = TurretMerger.turret;
         placedTurret.transform.position = worldPos;
         gridManager.AddTurret(tile, placedTurret);
+        return true;
     }
 
     Vector3 Align(Vector3 tile)

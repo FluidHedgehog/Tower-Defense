@@ -85,12 +85,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6026696527620414297, guid: 7def4ed81b3348540a5199b5c60644f7, type: 3}
+  m_Sprite: {fileID: -9058939382136216772, guid: 03979c0dbd2fc7e4ab864279ea4be302, type: 3}
   m_Color: {r: 1, g: 0.36320752, b: 0.89507806, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.2857144, y: 11.714286}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111,6 +111,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 4551502692998196769, guid: 4a7421007f44841408165b7672bf2176, type: 3}
   sliderUI: {fileID: 7903065375652882074}
   path: {fileID: 0}
+  animator: {fileID: 2078011469477678571}
   isAlive: 1
   isSlowed: 0
   isBloodBoosted: 0

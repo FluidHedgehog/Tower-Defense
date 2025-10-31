@@ -15,7 +15,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [SerializeField] GameObject bloodPrefab;
     [SerializeField] Slider sliderUI;
     [HideInInspector] public Path path;
-    
+    [SerializeField] Animator animator;
 
     // Enemy variables
     // ---------------------------------------------------------------------------
@@ -46,9 +46,9 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
     private int nextWaypointIndex = 2;
-    private Vector3 currentWaypoint;
-    private Vector3 nextWaypoint;
-    private Vector3 finalWaypoint;
+    private GameObject currentWaypoint;
+    private GameObject nextWaypoint;
+    private GameObject finalWaypoint;
 
     // Initialization of enemy
     // ---------------------------------------------------------------------------
@@ -71,9 +71,15 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         this.path = path;
 
         transform.position = (Vector2)path.waypoints[0].transform.position;
-        currentWaypoint = (Vector2)path.waypoints[1].transform.position;
-        nextWaypoint = (Vector2)path.waypoints[2].transform.position;
-        finalWaypoint = (Vector2)path.GetFinalWaypoint();
+
+        currentWaypoint = path.waypoints[1];
+        nextWaypoint = path.waypoints[2];
+        finalWaypoint = path.GetFinalWaypoint();
+
+        // transform.position = (Vector2)path.waypoints[0].transform.position;
+        // currentWaypoint = (Vector2)path.waypoints[1].transform.position;
+        // nextWaypoint = (Vector2)path.waypoints[2].transform.position;
+        // finalWaypoint = (Vector2)path.GetFinalWaypoint();
     }
 
     void Update()
@@ -91,16 +97,17 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
     void IMoveable.GoToNextWaypoint()
     {
-        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, Time.deltaTime * speed);
+        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint.transform.position, Time.deltaTime * speed);
 
-        if (Vector2.Distance(transform.position, finalWaypoint) < 0.1f)
+        if (Vector2.Distance(transform.position, finalWaypoint.transform.position) < 0.1f)
         {
             ((IMoveable)this).Dissappear();
             return;
         }
 
-        if (Vector2.Distance(transform.position, currentWaypoint) < 0.1f)
+        if (Vector2.Distance(transform.position, currentWaypoint.transform.position) < 0.1f)
         {
+            animator.SetTrigger(currentWaypoint.GetComponent<Waypoint>().SetAnimation());
             currentWaypoint = nextWaypoint;
             nextWaypoint = path.GetNextWaypoint(nextWaypointIndex);
             nextWaypointIndex++;
