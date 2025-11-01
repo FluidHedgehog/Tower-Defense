@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Abomination
   m_EditorClassIdentifier: Assembly-CSharp::Ability
   effectType: 0
+  calculator: 0
+  regularDPS: 0
+  enemyDensity: 0
+  uptime: 0
   baseValue: 1
   range: 1
   cycles: 1

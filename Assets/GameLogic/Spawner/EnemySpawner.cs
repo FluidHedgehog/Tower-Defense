@@ -36,7 +36,8 @@ public class EnemySpawner : MonoBehaviour
 
     void UpdateText()
     {
-        text.text = $" {currentWave + 1} / {waves.Length}";
+        var waveText = currentWave;
+        text.text = $" {waveText + 1} / {waves.Length}";
     }
 
     Path GetRandomPath(int random)
@@ -54,21 +55,22 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartGame()
     {
+        
         startGameButton.SetActive(false);
         skipWaveButton.SetActive(true);
         StartCoroutine(StartSpawn());
+
     }
 
     IEnumerator StartSpawn()
     {
-    
+        UpdateText();
         for (int i = 0; i < waves[currentWave].enemiesPerWave; i++)
         {
             CreateEnemy();
             yield return new WaitForSeconds(waves[currentWave].spawnDelay);
         }
 
-        UpdateText();
         delay = StartCoroutine(WaveDelay());
     }
 
@@ -97,7 +99,7 @@ public class EnemySpawner : MonoBehaviour
         {
             StopCoroutine(delay);
             delay = null;
-            currentWave += 1;
+            //currentWave += 1;
             if (currentWave == waves.Length)
             {
                 CheckIfWon();

@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
   m_Name: Moon
   m_EditorClassIdentifier: Assembly-CSharp::Ability
-  baseValue: 30
-  range: 8
+  effectType: 0
+  calculator: 0
+  regularDPS: 7.747573
+  enemyDensity: 0.5
+  uptime: 0.399
+  baseValue: 20
+  range: 3
   cycles: 1
-  cooldown: 0.6
+  cooldown: 1.03
   howLong: 0.05
   projectile: {fileID: 3984613707000631527, guid: 546b881c59b2cbd46975bdc8f226921e, type: 3}

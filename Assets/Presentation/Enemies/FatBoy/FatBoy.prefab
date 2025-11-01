@@ -419,6 +419,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 4551502692998196769, guid: 4a7421007f44841408165b7672bf2176, type: 3}
   sliderUI: {fileID: 2162572338011662799}
   path: {fileID: 0}
+  animator: {fileID: 8768866685308428511}
   isAlive: 1
   isSlowed: 0
   isBloodBoosted: 0
@@ -473,7 +474,7 @@ Animator:
   m_GameObject: {fileID: 5554107496535174016}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e69c7c6eb852bd44ebd9a3a19a9f1d91, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71c3c2d527bc25549ac18d6365766c3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

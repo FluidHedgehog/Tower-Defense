@@ -18,6 +18,7 @@ public class BloodSystem : MonoBehaviour
     [SerializeField] Slider bloodSlider;
 
     [SerializeField] int maxBlood;
+    [SerializeField] int startBlood;
 
     public int currentBlood { get; set; }
 
@@ -33,7 +34,7 @@ public class BloodSystem : MonoBehaviour
         BloodSystemEvents.OnPassValue += OnPassValue;
 
         bloodSlider.maxValue = maxBlood;
-        currentBlood = maxBlood;
+        currentBlood = startBlood;
         ChangeValue();
     }
 

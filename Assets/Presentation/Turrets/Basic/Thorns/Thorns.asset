@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
   m_Name: Thorns
   m_EditorClassIdentifier: Assembly-CSharp::Ability
+  effectType: 0
+  calculator: 0
+  regularDPS: 0
+  enemyDensity: 0
+  uptime: 0
   baseValue: 12
   range: 5
   cycles: 1

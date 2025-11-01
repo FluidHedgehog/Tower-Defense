@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Willow+
   m_EditorClassIdentifier: Assembly-CSharp::Ability
   effectType: 5
+  calculator: 0
+  regularDPS: 0
+  enemyDensity: 0
+  uptime: 0
   baseValue: 20
   range: 6.5
   cycles: 1
