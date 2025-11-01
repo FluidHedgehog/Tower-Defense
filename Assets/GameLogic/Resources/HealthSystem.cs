@@ -17,7 +17,7 @@ public class HealthSystem : MonoBehaviour
 
     [SerializeField] int maxLives;
 
-    int currentLives { get; set; }
+    public int currentLives { get; set; }
 
 
     void ChangeValue()

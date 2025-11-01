@@ -34982,13 +34982,13 @@ MonoBehaviour:
   - {fileID: 492344104}
   waves:
   - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
-  cooldown: 10
+  - {fileID: 11400000, guid: d926914417773b046b81705faa1cadc9, type: 2}
+  - {fileID: 11400000, guid: dce20e8dd1bcf9141bfb35128f3b971b, type: 2}
+  - {fileID: 11400000, guid: 9b162a838ec96e0458f228eb8bca3a14, type: 2}
+  - {fileID: 11400000, guid: d774fdb79cbf6334c900f3f9bc601818, type: 2}
+  - {fileID: 11400000, guid: feea9fb3c447b2d408fc2fe53bec62bb, type: 2}
+  - {fileID: 11400000, guid: dccef996747d0fe449ae7d6554cd7a59, type: 2}
+  cooldown: 60
 --- !u!4 &1016265764
 Transform:
   m_ObjectHideFlags: 0
@@ -36470,6 +36470,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280717317}
   m_CullTransparentMesh: 1
+--- !u!1 &1280789065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280789066}
+  - component: {fileID: 1280789067}
+  m_Layer: 0
+  m_Name: Saver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280789066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280789065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1444371751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280789067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280789065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a94f174d009b041b4d49a8a478d5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Saver
+  gridManager: {fileID: 2139040648}
+  enemySpawner: {fileID: 1016265763}
+  enemyManager: {fileID: 1421609334}
+  bloodSystem: {fileID: 396882671}
+  healthSystem: {fileID: 1538288297}
+  manaSystem: {fileID: 1517550206}
+  avaiblePositions: []
+  currentWave: 0
+  isLastWave: 0
+  enhancements: 0
+  currentBlood: 0
+  currentLives: 0
+  currentMana: 0
 --- !u!1 &1284176068
 GameObject:
   m_ObjectHideFlags: 0
@@ -65294,6 +65351,7 @@ Transform:
   - {fileID: 568056229}
   - {fileID: 518624738}
   - {fileID: 1187358163}
+  - {fileID: 1280789066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444981369
