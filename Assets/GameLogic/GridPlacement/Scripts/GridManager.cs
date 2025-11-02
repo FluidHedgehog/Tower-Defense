@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -33,6 +34,7 @@ public class GridManager : MonoBehaviour
     {
         turretPositions.Add(turretPos, turret);
         availablePositions.Remove(turretPos);
+        SetSpriteLayer();
     }
 
     public void SetCorrectTile(Vector3Int tile)
@@ -52,5 +54,14 @@ public class GridManager : MonoBehaviour
     {
         helperTilemap.ClearAllTiles();
         helperTilemap.SetTile(tile, correctTile);
+    }
+
+    public void SetSpriteLayer()
+    {
+        foreach(var values in turretPositions.Values)
+        {
+            var val = values.gameObject.GetComponentInChildren<SpriteRenderer>();
+            val.sortingOrder = -(int)values.gameObject.transform.position.y;
+        }
     }
 }
