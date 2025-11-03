@@ -1,4 +1,3 @@
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,14 +7,28 @@ public class MenuActions : MonoBehaviour
 
     [SerializeField] GameObject? options;
 
-    public void OnStart(string Level1)
+    public void OnStart()
     {
-        SceneManager.LoadScene(Level1);
+        SceneManager.UnloadSceneAsync("Menu");
+        SceneManager.LoadScene("LevelMap", LoadSceneMode.Additive);
+    }
+
+    public void OnChooseLevel(string levelName)
+    {
+        SceneManager.UnloadSceneAsync("LevelMap");
+        SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
+
+        var scene = SceneManager.GetSceneByName(levelName);
+        ProgressManager.instance.currentSceneName = scene.name;
     }
 
     public void OnMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.UnloadSceneAsync("Won");
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+
+        
+        //SceneManager.UnloadSceneAsync("Lost");
     }
 
     public void OnOptions(bool isOptionsEnabled)

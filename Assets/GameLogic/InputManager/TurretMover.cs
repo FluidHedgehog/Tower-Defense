@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TurretMover : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class TurretMover : MonoBehaviour
         BloodSystemEvents.TriggerBloodRemoved(cost);
 
         GameObject placedTurret = Instantiate(turret, worldPos, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(placedTurret, SceneManager.GetSceneByName(ProgressManager.instance.currentSceneName));
         gridManager.AddTurret(tile, placedTurret);
         return true;
     }

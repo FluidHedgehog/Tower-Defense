@@ -47,8 +47,10 @@ public class EnemySpawner : MonoBehaviour
 
     void CreateEnemy()
     {
+        
         var randomPath = Random.Range(0, paths.Length);
         var enemy = Instantiate(waves[currentWave].GetRandomEnemy(), (Vector2)GetRandomPath(randomPath).waypoints[0].transform.position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(enemy, SceneManager.GetSceneByName(ProgressManager.instance.currentSceneName));
         enemy.GetComponent<EnemyInstance>().Initialize(paths[randomPath]);
         enemyManager.AddEnemies(enemy);
     }

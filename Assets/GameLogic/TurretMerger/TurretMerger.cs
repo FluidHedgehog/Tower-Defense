@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class TurretMerger
 {
@@ -101,6 +102,8 @@ public static class TurretMerger
 
         //GridHelper.AddTurret(tile, mergeResult);
         GameObject currentObj = Object.Instantiate(mergeResult, mergePosition, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(currentObj, SceneManager.GetSceneByName(ProgressManager.instance.currentSceneName));
+        
         GridHelper.AddTurret(tile, currentObj);
         return true;
         //ChangeStates.ChangeStateNow(0);

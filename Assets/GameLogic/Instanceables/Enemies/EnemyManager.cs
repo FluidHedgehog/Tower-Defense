@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] EnemySpawner enemySpawner;
     public bool isLastWave;
+
     List<EnemyInstance> enemies = new List<EnemyInstance>();
 
     public int enhancements;
@@ -32,7 +33,14 @@ public class EnemyManager : MonoBehaviour
 
         if (isLastWave && enemies.Count == 0)
         {
-            SceneManager.LoadScene("Won");
+            ProgressManager.instance.CompleteLevel(ProgressManager.instance.currentSceneName);
+
+            if (SceneManager.GetSceneByName(ProgressManager.instance.currentSceneName).isLoaded)
+            {
+                SceneManager.UnloadSceneAsync(ProgressManager.instance.currentSceneName);    
+            }
+            
+            SceneManager.LoadScene("Won", LoadSceneMode.Additive);
         }
 
         EnhanceEnemies();
