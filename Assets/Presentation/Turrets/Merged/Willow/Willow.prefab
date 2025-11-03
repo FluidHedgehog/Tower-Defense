@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 1
   towerKind: 5
-  cost: 25
+  cost: 30
 --- !u!1 &7158000438483252402
 GameObject:
   m_ObjectHideFlags: 0

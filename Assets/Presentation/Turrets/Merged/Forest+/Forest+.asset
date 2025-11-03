@@ -15,7 +15,7 @@ MonoBehaviour:
   effectType: 2
   calculator: 0
   regularDPS: 0
-  enemyDensity: 0
+  enemyDensity: 0.5
   uptime: 0
   baseValue: 25
   range: 7.5

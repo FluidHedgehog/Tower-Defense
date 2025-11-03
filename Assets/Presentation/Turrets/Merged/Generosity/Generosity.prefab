@@ -306,4 +306,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 1
   towerKind: 4
-  cost: 20
+  cost: 30

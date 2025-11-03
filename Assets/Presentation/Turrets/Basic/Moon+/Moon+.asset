@@ -15,11 +15,11 @@ MonoBehaviour:
   effectType: 0
   calculator: 0
   regularDPS: 0
-  enemyDensity: 0
+  enemyDensity: 0.5
   uptime: 0
-  baseValue: 70
-  range: 9
+  baseValue: 20
+  range: 7
   cycles: 1
-  cooldown: 0.5
+  cooldown: 1.9
   howLong: 0.05
   projectile: {fileID: 3984613707000631527, guid: 546b881c59b2cbd46975bdc8f226921e, type: 3}
