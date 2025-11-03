@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ability
   effectType: 0
   calculator: 1
-  regularDPS: 76.02655
+  regularDPS: 78.53982
   enemyDensity: 1
   uptime: 0.75
-  baseValue: 20
-  range: 2.2
+  baseValue: 25
+  range: 2
   cycles: 1
   cooldown: 3
   howLong: 0.05
