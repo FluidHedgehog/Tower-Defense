@@ -28,6 +28,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [HideInInspector] public bool isSlowed;
     [HideInInspector] public bool isBloodBoosted;
     [HideInInspector] public bool isStunned;
+    [HideInInspector] public bool isPoisoned;
     [HideInInspector] int boostedBlood;
     [HideInInspector] public bool isDamageBoosted;
     [HideInInspector] int boostedDamage;
@@ -127,6 +128,9 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
     public IEnumerator ApplyPoison(int cycles, int damage, float cooldown )
     {
+        if (isPoisoned) yield return null;
+        isPoisoned = true;
+
         poisonCycles = cycles;
 
         while (poisonCycles > 0)
@@ -135,11 +139,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
             {
                 damage += boostedDamage;
             }
-            
+
             health -= damage;
             UpdateSlider();
+            ValidateHealth();
             yield return new WaitForSeconds(cooldown);
         }
+
+        isPoisoned = false;
     }
 
     public IEnumerator ApplyBoostDamage(int damage, float howLong)

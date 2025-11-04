@@ -33260,7 +33260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BloodSystem
   bloodSlider: {fileID: 481255067}
   maxBlood: 100
-  startBlood: 31
+  startBlood: 80
 --- !u!1 &403084620
 GameObject:
   m_ObjectHideFlags: 0
