@@ -15,10 +15,10 @@ MonoBehaviour:
   effectType: 3
   calculator: 0
   regularDPS: 0
-  enemyDensity: 0
+  enemyDensity: 0.5
   uptime: 0
-  baseValue: 6
-  range: 5
+  baseValue: 20
+  range: 4
   cycles: 1
   cooldown: 0.05
   howLong: 0.05
