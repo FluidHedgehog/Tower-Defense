@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 5aa546ae440943f49bbd4aae4ebb301f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1929561877868760489
+    second: bones-spell-anim_0
+  - first:
+      213: 4343682842173047722
+    second: bones-spell-anim_1
+  - first:
+      213: -8712687162990049483
+    second: bones-spell-anim_2
+  - first:
+      213: 785349775372511178
+    second: bones-spell-anim_3
+  - first:
+      213: 3218307327891031507
+    second: bones-spell-anim_4
+  - first:
+      213: 959811966374894516
+    second: bones-spell-anim_5
+  - first:
+      213: 1545817511972324871
+    second: bones-spell-anim_6
+  - first:
+      213: 251664894813798216
+    second: bones-spell-anim_7
+  - first:
+      213: -2174108364198784489
+    second: bones-spell-anim_8
+  - first:
+      213: 577304769963206537
+    second: bones-spell-anim_9
+  - first:
+      213: 5223503801878412513
+    second: bones-spell-anim_10
+  - first:
+      213: -342012447133675560
+    second: bones-spell-anim_11
+  - first:
+      213: 6433086583972289909
+    second: bones-spell-anim_12
+  - first:
+      213: 2612238448923478981
+    second: bones-spell-anim_13
+  - first:
+      213: -6755851812697760712
+    second: bones-spell-anim_14
+  - first:
+      213: -3812867970653805863
+    second: bones-spell-anim_15
+  - first:
+      213: 8054182581629600824
+    second: bones-spell-anim_16
+  - first:
+      213: 3791052267646458577
+    second: bones-spell-anim_17
+  - first:
+      213: -8468006255962178284
+    second: bones-spell-anim_18
+  - first:
+      213: -1674404499555303655
+    second: bones-spell-anim_19
+  - first:
+      213: -281561476167708699
+    second: bones-spell-anim_20
+  - first:
+      213: 7647542946971025875
+    second: bones-spell-anim_21
+  - first:
+      213: 5379005424233378425
+    second: bones-spell-anim_22
+  - first:
+      213: 4077315099939041421
+    second: bones-spell-anim_23
+  - first:
+      213: -4238887429949679292
+    second: bones-spell-anim_24
+  - first:
+      213: 1621881068341526835
+    second: bones-spell-anim_25
+  - first:
+      213: 4463021344975340987
+    second: bones-spell-anim_26
+  - first:
+      213: 83036083464319839
+    second: bones-spell-anim_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bones-spell-anim_0
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 596
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7523f7102b1d835e0800000000000000
+      internalID: -1929561877868760489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 581
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa30fa8f78cd74c30800000000000000
+      internalID: 4343682842173047722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 584
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5374fd2ef21561780800000000000000
+      internalID: -8712687162990049483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_3
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 509
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7e281b57f16ea00800000000000000
+      internalID: 785349775372511178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_4
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 482
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d54bf0a679b9ac20800000000000000
+      internalID: 3218307327891031507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 449
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbd1fae5efe15d00800000000000000
+      internalID: 959811966374894516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_6
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 440
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70640b846d8d37510800000000000000
+      internalID: 1545817511972324871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_7
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 425
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fffc173e71e7300800000000000000
+      internalID: 251664894813798216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_8
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 410
+        width: 35
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712d9b036f304d1e0800000000000000
+      internalID: -2174108364198784489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_9
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 410
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 987abcc21aff20800800000000000000
+      internalID: 577304769963206537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_10
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 365
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec7dd1580d9d7840800000000000000
+      internalID: 5223503801878412513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 347
+        width: 29
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfc5dbcd7de04bf0800000000000000
+      internalID: -342012447133675560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_12
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 350
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ddff60a2ae64950800000000000000
+      internalID: 6433086583972289909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_13
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 320
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb83b07709804420800000000000000
+      internalID: 2612238448923478981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_14
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 287
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c98f402946e32a0800000000000000
+      internalID: -6755851812697760712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 257
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d227b938c8f51bc0800000000000000
+      internalID: -3812867970653805863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 260
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834cb26926436cf60800000000000000
+      internalID: 8054182581629600824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_17
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 218
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da910a93f58c9430800000000000000
+      internalID: 3791052267646458577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_18
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 203
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41db695fc299b7a80800000000000000
+      internalID: -8468006255962178284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_19
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 191
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fb0b1aaf153c8e0800000000000000
+      internalID: -1674404499555303655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_20
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 185
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efc6964451b71cf0800000000000000
+      internalID: -281561476167708699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_21
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 179
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d180c6bac7812a60800000000000000
+      internalID: 7647542946971025875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_22
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 131
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97274542fe016aa40800000000000000
+      internalID: 5379005424233378425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_23
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 119
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80f3391b78859830800000000000000
+      internalID: 4077315099939041421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_24
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 101
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4491bfe47527c25c0800000000000000
+      internalID: -4238887429949679292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_25
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 83
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3318d621d34128610800000000000000
+      internalID: 1621881068341526835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_26
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 17
+        width: 38
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5cd346446dfed30800000000000000
+      internalID: 4463021344975340987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bones-spell-anim_27
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 5
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f533e62c0e0072100800000000000000
+      internalID: 83036083464319839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bones-spell-anim_0: -1929561877868760489
+      bones-spell-anim_1: 4343682842173047722
+      bones-spell-anim_10: 5223503801878412513
+      bones-spell-anim_11: -342012447133675560
+      bones-spell-anim_12: 6433086583972289909
+      bones-spell-anim_13: 2612238448923478981
+      bones-spell-anim_14: -6755851812697760712
+      bones-spell-anim_15: -3812867970653805863
+      bones-spell-anim_16: 8054182581629600824
+      bones-spell-anim_17: 3791052267646458577
+      bones-spell-anim_18: -8468006255962178284
+      bones-spell-anim_19: -1674404499555303655
+      bones-spell-anim_2: -8712687162990049483
+      bones-spell-anim_20: -281561476167708699
+      bones-spell-anim_21: 7647542946971025875
+      bones-spell-anim_22: 5379005424233378425
+      bones-spell-anim_23: 4077315099939041421
+      bones-spell-anim_24: -4238887429949679292
+      bones-spell-anim_25: 1621881068341526835
+      bones-spell-anim_26: 4463021344975340987
+      bones-spell-anim_27: 83036083464319839
+      bones-spell-anim_3: 785349775372511178
+      bones-spell-anim_4: 3218307327891031507
+      bones-spell-anim_5: 959811966374894516
+      bones-spell-anim_6: 1545817511972324871
+      bones-spell-anim_7: 251664894813798216
+      bones-spell-anim_8: -2174108364198784489
+      bones-spell-anim_9: 577304769963206537
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
