@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e9fdd55c6947b874e8378a33caeb279c
+guid: 47a90b7ed661f3e4a81e90244555183c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -445544398357906401
-    second: health-mask_0
+      213: -2662463210619080621
+    second: bones-button-click_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: health-mask_0
+      name: bones-button-click_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 162
-        height: 366
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1c3634fabb11d9f0800000000000000
-      internalID: -445544398357906401
+      spriteID: 350f087f0d70d0bd0800000000000000
+      internalID: -2662463210619080621
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      health-mask_0: -445544398357906401
+      bones-button-click_0: -2662463210619080621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

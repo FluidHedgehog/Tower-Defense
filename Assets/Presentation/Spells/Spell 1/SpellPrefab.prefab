@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpellInstance
   spell: {fileID: 11400000, guid: e66c795e2be31b847809a5cae2283ab4, type: 2}
   showRange: {fileID: 6869242870245642003}
+  cost: 0
 --- !u!50 &5605366482748314232
 Rigidbody2D:
   serializedVersion: 5

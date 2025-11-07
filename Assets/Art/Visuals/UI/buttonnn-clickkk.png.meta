@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e9fdd55c6947b874e8378a33caeb279c
+guid: 2a374c8d2b5333042a4c1c71a6121205
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -445544398357906401
-    second: health-mask_0
+      213: 8867162244014797502
+    second: buttonnn-clickkk_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: health-mask_0
+      name: buttonnn-clickkk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 162
-        height: 366
+        width: 837
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1c3634fabb11d9f0800000000000000
-      internalID: -445544398357906401
+      spriteID: eb2f148a41d7e0b70800000000000000
+      internalID: 8867162244014797502
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      health-mask_0: -445544398357906401
+      buttonnn-clickkk_0: 8867162244014797502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
