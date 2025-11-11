@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 1906557143293032876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -338,7 +338,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.03294, y: -0.96693, z: -1}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2745623253459399625}
@@ -393,12 +393,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2932829601532438706, guid: a7a9b8c478f00be48a981397d29cd84c, type: 3}
+  m_Sprite: {fileID: 2901195680545061901, guid: abfd66bae09c5c641845cca7e3eb7bb3, type: 3}
   m_Color: {r: 1, g: 0.36320752, b: 0.89507806, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.857142, y: 27.857143}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -424,6 +424,7 @@ MonoBehaviour:
   isSlowed: 0
   isBloodBoosted: 0
   isStunned: 0
+  isPoisoned: 0
   isDamageBoosted: 0
   poisonCycles: 0
   enhanced: 0

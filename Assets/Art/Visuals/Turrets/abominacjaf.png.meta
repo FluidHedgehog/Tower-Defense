@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7a9b8c478f00be48a981397d29cd84c
+guid: 5067c1f648dec824fba7778dcce770e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2932829601532438706
-    second: mooscles-go-right - 1_0
+      213: 4973658441266957853
+    second: abominacjaf_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 7
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mooscles-go-right - 1_0
+      name: abominacjaf_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 60
-        height: 96
+        x: 24
+        y: 2
+        width: 73
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4798e5240f7c47d0800000000000000
-      internalID: -2932829601532438706
+      spriteID: d1e07d1300cf50540800000000000000
+      internalID: 4973658441266957853
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mooscles-go-right - 1_0: -2932829601532438706
+      abominacjaf_0: 4973658441266957853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 603acbb0a73f6f44794bd3c3acf37e0f
+guid: 32d1ff532e6b0574192c8c7c6c999896
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5439722340757545935
-    second: pitchfork-go-right - 2_0
+      213: 7905900087841247876
+    second: upgraded_towers_0
+  - first:
+      213: 5722735015448849470
+    second: upgraded_towers_1
+  - first:
+      213: -3642000775822015642
+    second: upgraded_towers_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 7
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pitchfork-go-right - 2_0
+      name: upgraded_towers_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 75
-        height: 109
+        x: 23
+        y: 6
+        width: 81
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13cd36a1a593284b0800000000000000
-      internalID: -5439722340757545935
+      spriteID: 482d18d1e3667bd60800000000000000
+      internalID: 7905900087841247876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgraded_towers_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 5
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ca48b1d2d3b6f40800000000000000
+      internalID: 5722735015448849470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upgraded_towers_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 3
+        width: 66
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6638e6d2793057dc0800000000000000
+      internalID: -3642000775822015642
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pitchfork-go-right - 2_0: -5439722340757545935
+      upgraded_towers_0: 7905900087841247876
+      upgraded_towers_1: 5722735015448849470
+      upgraded_towers_2: -3642000775822015642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
