@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] EnemyManager enemyManager;
 
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI countdownText;
 
     [SerializeField] GameObject startGameButton;
     [SerializeField] GameObject skipWaveButton;
@@ -24,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int cooldown;
 
     Coroutine delay;
+    Coroutine countdownCoroutine;
 
     int currentWave;
 
@@ -31,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         text.text = $" {0} / {waves.Length}";
+        countdownText.text = "";
         //waves.Length;
     }
 
@@ -66,6 +69,14 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator StartSpawn()
     {
+        if (countdownCoroutine != null)
+        {
+            StopCoroutine(countdownCoroutine);
+            countdownCoroutine = null;
+        }
+
+
+        countdownText.text = "";
         UpdateText();
         for (int i = 0; i < waves[currentWave].enemiesPerWave; i++)
         {
@@ -74,6 +85,18 @@ public class EnemySpawner : MonoBehaviour
         }
 
         delay = StartCoroutine(WaveDelay());
+    }
+
+    IEnumerator WaveCountdown(int seconds)
+    {
+        int remaining = seconds;
+        while (remaining > 0)
+        {
+            countdownText.text = $"{remaining}s";
+            yield return new WaitForSeconds(1f);
+            remaining--;
+        }
+        countdownText.text = "";
     }
 
     IEnumerator WaveDelay()
@@ -90,7 +113,14 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(cooldown);
+            if (countdownCoroutine != null)
+            {
+                StopCoroutine(countdownCoroutine);
+                countdownCoroutine = null;
+            }
+
+            countdownCoroutine = StartCoroutine(WaveCountdown(cooldown));
+            yield return countdownCoroutine;
             StartCoroutine(StartSpawn());
         }
     }
@@ -101,7 +131,15 @@ public class EnemySpawner : MonoBehaviour
         {
             StopCoroutine(delay);
             delay = null;
-            //currentWave += 1;
+
+            if (countdownCoroutine != null)
+            {
+                StopCoroutine(countdownCoroutine);
+                countdownCoroutine = null;
+            }
+
+            countdownText.text = "";
+
             if (currentWave == waves.Length)
             {
                 CheckIfWon();
