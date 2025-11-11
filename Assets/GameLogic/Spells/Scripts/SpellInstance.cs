@@ -2,9 +2,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum SpellType { Fire, Bones, Frost }
+
 public class SpellInstance : MonoBehaviour
 {
     [SerializeField] public Spell spell;
+    [SerializeField] public SpellType spellType;
     [SerializeField] GameObject showRange;
     CircleCollider2D range;
     bool hasTriggered;

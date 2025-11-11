@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class SpellCasterEvents
@@ -14,9 +15,11 @@ public class SpellCaster : MonoBehaviour
 {
     [SerializeField] ManaSystem manaSystem;
 
-    GameObject currentSpell;
-    float cooldownTimer;
-    float currentCooldown;
+    public GameObject currentSpell;
+
+    Dictionary<SpellType, float> spellCooldowns = new();
+
+    SpellType currentSpellType;
 
     void OnEnable()
     {
@@ -32,32 +35,45 @@ public class SpellCaster : MonoBehaviour
 
     void Update()
     {
-        if (cooldownTimer > 0)
+        List<SpellType> keys = new(spellCooldowns.Keys);
+        foreach (var key in keys)
         {
-            cooldownTimer -= Time.deltaTime;
+            if (spellCooldowns[key] > 0)
+            {
+                spellCooldowns[key] -= Time.deltaTime;
+            }
         }
     }
 
     public void InitializeSpell(GameObject spellPrefab)
     {
-
         if (spellPrefab == null)
         {
             Debug.LogWarning("No SpellPrefab!");
         }
+
+        SpellInstance instance = spellPrefab.GetComponent<SpellInstance>();
+
         if (spellPrefab.GetComponent<SpellInstance>() == null)
         {
             Debug.LogWarning("No SpellInstance!");
         }
-        if (cooldownTimer > 0)
+
+        currentSpellType = instance.spellType;
+
+        float remainingCooldown = spellCooldowns.ContainsKey(currentSpellType) ? spellCooldowns[currentSpellType] : 0;
+
+        if (remainingCooldown > 0)
         {
             Debug.LogWarning("Spell on cooldown!");
             return;
         }
+
         if (!manaSystem.CanSpell(spellPrefab.GetComponent<SpellInstance>().cost))
         {
             return;
         }
+
         currentSpell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
         ChangeStates.ChangeStateNow(3);
     }
@@ -72,13 +88,15 @@ public class SpellCaster : MonoBehaviour
         SpellInstance spellInstance = currentSpell.GetComponent<SpellInstance>();
         spellInstance.TriggetEffect();
         ManaSystemEvents.TriggerManaRemoved(spellInstance.cost);
-        
-        if (spellInstance.spell != null)
-        {
-            cooldownTimer = spellInstance.spell.cooldown;
-        }
-        
+
+        spellCooldowns[spellInstance.spellType] = spellInstance.spell.cooldown;
+
         Destroy(currentSpell);
+        currentSpell = null;
     }
 
+    public Dictionary<SpellType, float> GetCooldownInfo()
+    {
+        return new Dictionary<SpellType, float>(spellCooldowns);
+    }
 }

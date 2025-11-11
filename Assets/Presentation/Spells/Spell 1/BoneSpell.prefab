@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6160988618993737099}
   - component: {fileID: 5605366482748314232}
   m_Layer: 0
-  m_Name: SpellPrefab
+  m_Name: BoneSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2922882223937746110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.74153, y: 230.23515, z: 0}
+  m_LocalPosition: {x: 163.31752, y: 852.58057, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellInstance
   spell: {fileID: 11400000, guid: e66c795e2be31b847809a5cae2283ab4, type: 2}
+  spellType: 1
   showRange: {fileID: 6869242870245642003}
   cost: 0
 --- !u!50 &5605366482748314232

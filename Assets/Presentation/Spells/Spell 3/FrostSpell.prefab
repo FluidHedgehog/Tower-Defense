@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6160988618993737099}
   - component: {fileID: 5605366482748314232}
   m_Layer: 0
-  m_Name: SpellPrefab
+  m_Name: FrostSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellInstance
   spell: {fileID: 11400000, guid: c0405cfd38a13434f91ea82f16a564e3, type: 2}
+  spellType: 2
   showRange: {fileID: 6869242870245642003}
   cost: 0
 --- !u!50 &5605366482748314232

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6160988618993737099}
   - component: {fileID: 5605366482748314232}
   m_Layer: 0
-  m_Name: SpellPrefab
+  m_Name: FireSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

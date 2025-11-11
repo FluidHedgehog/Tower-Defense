@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public static class BloodSystemEvents
 public class BloodSystem : MonoBehaviour
 {
     [SerializeField] Slider bloodSlider;
+    [SerializeField] TextMeshProUGUI text;
 
     [SerializeField] int maxBlood;
     [SerializeField] int startBlood;
@@ -25,6 +27,7 @@ public class BloodSystem : MonoBehaviour
     void ChangeValue()
     {
         bloodSlider.value = currentBlood;
+        text.text = $"{currentBlood}";
     }
 
     void OnEnable()
@@ -58,7 +61,7 @@ public class BloodSystem : MonoBehaviour
 
     bool OnPassValue(int blood)
     {
-        if (blood > currentBlood)
+        if (blood >= currentBlood)
         {
             return false;
         }

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
-  m_Name: Generosity
+  m_Name: GenerosityTarget
   m_EditorClassIdentifier: Assembly-CSharp::Ability
-  effectType: 4
+  effectType: 0
   calculator: 0
   regularDPS: 0
   enemyDensity: 0.5
   uptime: 0
-  baseValue: 15
+  baseValue: 39
   range: 4
   cycles: 1
-  cooldown: 0.05
+  cooldown: 1
   howLong: 0.05
-  projectile: {fileID: 0}
+  projectile: {fileID: 3984613707000631527, guid: 546b881c59b2cbd46975bdc8f226921e, type: 3}

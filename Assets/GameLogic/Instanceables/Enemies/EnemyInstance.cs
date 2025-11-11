@@ -135,6 +135,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
         while (poisonCycles > 0)
         {
+            if (!isAlive) break;
+
             if (isDamageBoosted)
             {
                 damage += boostedDamage;
