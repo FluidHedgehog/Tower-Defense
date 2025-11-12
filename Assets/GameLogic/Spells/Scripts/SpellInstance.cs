@@ -51,6 +51,9 @@ public class SpellInstance : MonoBehaviour
     {
         if (hasTriggered) return;
         hasTriggered = true;
+
+        PlaySpellAnimation();
+
         switch (spell.effectType)
         {
             case EffectType.Damage:
@@ -67,6 +70,14 @@ public class SpellInstance : MonoBehaviour
 
             default:
                 return;
+        }
+    }
+
+    void PlaySpellAnimation()
+    {
+        if(spell.castVFXPrefab != null)
+        {
+            Instantiate(spell.castVFXPrefab, transform.position, Quaternion.identity);
         }
     }
 
