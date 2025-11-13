@@ -28,14 +28,6 @@ public class InfoBookActions : MonoBehaviour
         }
     }
 
-    public void CloseIfTutorialEnded()
-    {
-        if(currentPage == pages.Length -1 )
-        {
-            CloseBook();
-        }
-    }
-
     public void CloseBook()
     {
         gameObject.SetActive(false);
