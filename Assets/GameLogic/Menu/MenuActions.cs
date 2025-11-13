@@ -22,18 +22,26 @@ public class MenuActions : MonoBehaviour
         ProgressManager.instance.currentSceneName = scene.name;
     }
 
-    public void OnMenu()
+    public void OnMenuWon()
     {
         SceneManager.UnloadSceneAsync("Won");
         SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
-
-        
-        //SceneManager.UnloadSceneAsync("Lost");
+    }
+    public void OnMenuLost()
+    {
+        SceneManager.UnloadSceneAsync("Lost");
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
     }
 
     public void OnOptions(bool isOptionsEnabled)
     {
         options?.SetActive(isOptionsEnabled);
+    }
+
+    public void OnCredits()
+    {
+        SceneManager.UnloadSceneAsync("Won");
+        SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
     }
 
     public void OnExit()
