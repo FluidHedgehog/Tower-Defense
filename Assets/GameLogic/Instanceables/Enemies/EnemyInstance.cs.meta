@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 88ff0bc0ce9ef52479571f5dac55e1e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - type: {instanceID: 0}
+  - bloodPrefab: {instanceID: 0}
+  - sliderUI: {instanceID: 0}
+  - path: {instanceID: 0}
+  - animator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

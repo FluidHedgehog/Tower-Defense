@@ -13,6 +13,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [Space(5)]
     [SerializeField] EnemyType type;
     [SerializeField] GameObject bloodPrefab;
+    [SerializeField] Sprite[] statuses;
     [SerializeField] Slider sliderUI;
     [HideInInspector] public Path path;
     [SerializeField] Animator animator;
