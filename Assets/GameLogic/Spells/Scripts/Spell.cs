@@ -30,9 +30,5 @@ public class Spell : ScriptableObject
     [Range(1, 20)]
     [SerializeField] public int cycles;
 
-    [Header("Animation")]
-    public AnimationClip castAnimation;
-    public GameObject castVFXPrefab;
-
 
 }
