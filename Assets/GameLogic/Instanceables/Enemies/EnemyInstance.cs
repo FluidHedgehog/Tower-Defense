@@ -186,6 +186,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     public IEnumerator ApplySlow(int slowValue, float howLong)
     {
         isSlowed = true;
+        var previousSpeed = speed; 
         statuses[0].gameObject.SetActive(true);
         speed -= slowValue * 0.1f;
         if (speed <= 0)
@@ -196,7 +197,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
         isSlowed = false;
         statuses[0].gameObject.SetActive(false);
-        speed += slowValue * 0.1f;
+        speed = previousSpeed;
     }
 
     public IEnumerator ApplyStun(float howLong)
