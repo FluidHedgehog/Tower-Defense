@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84d154b02b98914587306ddde39d54f, type: 3}
   m_Name: FireSpell
   m_EditorClassIdentifier: Assembly-CSharp::Spell
-  effectType: 0
-  cost: 15
+  effectType: 2
+  cost: 25
   range: 5
-  baseValue: 50
-  howLong: 5
-  cooldown: 60
-  cycles: 8
+  baseValue: 30
+  howLong: 1
+  cooldown: 40
+  cycles: 5

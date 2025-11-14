@@ -16,6 +16,6 @@ MonoBehaviour:
   cost: 20
   range: 3
   baseValue: 100
-  howLong: 5
+  howLong: 0.05
   cooldown: 30
-  cycles: 8
+  cycles: 1

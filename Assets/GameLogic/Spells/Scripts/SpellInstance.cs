@@ -14,7 +14,7 @@ public class SpellInstance : MonoBehaviour
 
     [HideInInspector] public int cost;
 
-    List<EnemyInstance> enemiesInArea = new List<EnemyInstance>();
+    [SerializeField] List<EnemyInstance> enemiesInArea = new List<EnemyInstance>();
 
     void OnEnable()
     {
@@ -82,7 +82,7 @@ public class SpellInstance : MonoBehaviour
     {
         foreach (var enemy in enemiesInArea)
         {
-            enemy.ApplySlow(spell.baseValue, spell.howLong);
+            enemy.StartCoroutine(enemy.ApplySlow(spell.baseValue, spell.howLong));
         }
     }
 
@@ -90,7 +90,7 @@ public class SpellInstance : MonoBehaviour
     {
         foreach (var enemy in enemiesInArea)
         {
-            enemy.ApplyPoison(spell.cycles, spell.baseValue, spell.howLong);
+            enemy.StartCoroutine(enemy.ApplyPoison(spell.cycles, spell.baseValue, spell.howLong));
         }
     }
 

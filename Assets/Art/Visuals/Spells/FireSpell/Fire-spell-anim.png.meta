@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 410b4b187c06a8b4bbfad1e5556fc59e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5100164049805189421
+    second: Fire-spell-anim_0
+  - first:
+      213: 9079114112020031874
+    second: Fire-spell-anim_1
+  - first:
+      213: -2229848176894356529
+    second: Fire-spell-anim_2
+  - first:
+      213: 4721767571237939651
+    second: Fire-spell-anim_3
+  - first:
+      213: -1557111393855578394
+    second: Fire-spell-anim_4
+  - first:
+      213: 5971083699868964132
+    second: Fire-spell-anim_5
+  - first:
+      213: 7755966631461893154
+    second: Fire-spell-anim_6
+  - first:
+      213: 7182347581541250361
+    second: Fire-spell-anim_7
+  - first:
+      213: 7106698116575729400
+    second: Fire-spell-anim_8
+  - first:
+      213: -8997774178166998611
+    second: Fire-spell-anim_9
+  - first:
+      213: 9144583848179708966
+    second: Fire-spell-anim_10
+  - first:
+      213: 4086411692015950458
+    second: Fire-spell-anim_11
+  - first:
+      213: 7904036500931410007
+    second: Fire-spell-anim_12
+  - first:
+      213: -1411406449195464074
+    second: Fire-spell-anim_13
+  - first:
+      213: -3621164229976977674
+    second: Fire-spell-anim_14
+  - first:
+      213: 1302939121764777938
+    second: Fire-spell-anim_15
+  - first:
+      213: -3797824886713026797
+    second: Fire-spell-anim_16
+  - first:
+      213: -4037638930563969715
+    second: Fire-spell-anim_17
+  - first:
+      213: -6000797880037378141
+    second: Fire-spell-anim_18
+  - first:
+      213: 3609355893689496112
+    second: Fire-spell-anim_19
+  - first:
+      213: -8958035901639274807
+    second: Fire-spell-anim_20
+  - first:
+      213: -2183199913095359004
+    second: Fire-spell-anim_21
+  - first:
+      213: -6336902788792574244
+    second: Fire-spell-anim_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fire-spell-anim_0
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 2
+        width: 128
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d212bd47e2c67c640800000000000000
+      internalID: 5100164049805189421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_1
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 39
+        width: 109
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289a0328e2e7ffd70800000000000000
+      internalID: 9079114112020031874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_2
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 28
+        width: 112
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3d829b5ecfd01e0800000000000000
+      internalID: -2229848176894356529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_3
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 36
+        width: 117
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9a89bc696178140800000000000000
+      internalID: 4721767571237939651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_4
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 30
+        width: 126
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee568def67046ae0800000000000000
+      internalID: -1557111393855578394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_5
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 23
+        width: 142
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42590d62dfc8dd250800000000000000
+      internalID: 5971083699868964132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_7
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 36
+        width: 84
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935f62b5213dca360800000000000000
+      internalID: 7182347581541250361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 16
+        width: 111
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a1d9c78c9d5b830800000000000000
+      internalID: 4086411692015950458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 78
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe0fde815a0fbdc0800000000000000
+      internalID: -3621164229976977674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire-spell-anim_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 71
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfbfbc5a38f41210800000000000000
+      internalID: 1302939121764777938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9d61a274e682c6c48a90180087fc2b03
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fire-spell-anim_0: 5100164049805189421
+      Fire-spell-anim_1: 9079114112020031874
+      Fire-spell-anim_10: 9144583848179708966
+      Fire-spell-anim_11: 4086411692015950458
+      Fire-spell-anim_12: 7904036500931410007
+      Fire-spell-anim_13: -1411406449195464074
+      Fire-spell-anim_14: -3621164229976977674
+      Fire-spell-anim_15: 1302939121764777938
+      Fire-spell-anim_16: -3797824886713026797
+      Fire-spell-anim_17: -4037638930563969715
+      Fire-spell-anim_18: -6000797880037378141
+      Fire-spell-anim_19: 3609355893689496112
+      Fire-spell-anim_2: -2229848176894356529
+      Fire-spell-anim_20: -8958035901639274807
+      Fire-spell-anim_21: -2183199913095359004
+      Fire-spell-anim_22: -6336902788792574244
+      Fire-spell-anim_3: 4721767571237939651
+      Fire-spell-anim_4: -1557111393855578394
+      Fire-spell-anim_5: 5971083699868964132
+      Fire-spell-anim_6: 7755966631461893154
+      Fire-spell-anim_7: 7182347581541250361
+      Fire-spell-anim_8: 7106698116575729400
+      Fire-spell-anim_9: -8997774178166998611
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

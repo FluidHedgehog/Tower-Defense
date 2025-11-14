@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EnemyInstance : MonoBehaviour, IMoveable
 {
-
     // References variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
@@ -175,6 +174,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     public IEnumerator ApplySlow(int slowValue, float howLong)
     {
         isSlowed = true;
+        var previousSpeed = speed;
         speed -= slowValue * 0.1f;
         if (speed <= 0)
         {
@@ -183,7 +183,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         yield return new WaitForSeconds(howLong);
 
         isSlowed = false;
-        speed += slowValue * 0.1f;
+        speed = previousSpeed;
     }
 
     public IEnumerator ApplyStun(float howLong)

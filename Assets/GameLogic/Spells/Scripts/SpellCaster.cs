@@ -16,6 +16,7 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] ManaSystem manaSystem;
 
     public GameObject currentSpell;
+    public GameObject currentSpellAnim;
 
     Dictionary<SpellType, float> spellCooldowns = new();
 
@@ -85,6 +86,7 @@ public class SpellCaster : MonoBehaviour
 
     void CastSpell()
     {
+        PlaySpellAnimation();
         SpellInstance spellInstance = currentSpell.GetComponent<SpellInstance>();
         spellInstance.TriggetEffect();
         ManaSystemEvents.TriggerManaRemoved(spellInstance.cost);
@@ -93,6 +95,22 @@ public class SpellCaster : MonoBehaviour
 
         Destroy(currentSpell);
         currentSpell = null;
+    }
+
+    public void AssignSpellAnimation(GameObject spellAnim)
+    {
+        currentSpellAnim = spellAnim;
+    }
+
+    void PlaySpellAnimation()
+    {
+        Instantiate(currentSpellAnim, (Vector3)currentSpell.transform.position, Quaternion.identity);
+    }
+
+    public void DestroySpellAnimation()
+    {
+        Destroy(currentSpellAnim);
+        currentSpellAnim = null;
     }
 
     public Dictionary<SpellType, float> GetCooldownInfo()
