@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyInstance : MonoBehaviour, IMoveable
 {
+
     // References variables
     // ---------------------------------------------------------------------------
     // ---------------------------------------------------------------------------
@@ -12,9 +13,11 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [Space(5)]
     [SerializeField] EnemyType type;
     [SerializeField] GameObject bloodPrefab;
+    [SerializeField] public SpriteRenderer[] statuses;
     [SerializeField] Slider sliderUI;
     [HideInInspector] public Path path;
     [SerializeField] Animator animator;
+    
 
     // Enemy variables
     // ---------------------------------------------------------------------------
@@ -63,7 +66,10 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
         //path = FindFirstObjectByType<Path>();
 
-
+        for (int i = 0; i < statuses.Length; i++)
+        {
+            statuses[i].gameObject.SetActive(false);
+        }
     }
 
     public void Initialize(Path path)
@@ -129,6 +135,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         if (isPoisoned) yield return null;
         isPoisoned = true;
+        statuses[1].gameObject.SetActive(true);
 
         poisonCycles = cycles;
 
@@ -148,33 +155,38 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
 
         isPoisoned = false;
+        statuses[1].gameObject.SetActive(false);
     }
 
     public IEnumerator ApplyBoostDamage(int damage, float howLong)
     {
         isDamageBoosted = true;
+        statuses[2].gameObject.SetActive(true);
         boostedDamage = damage * 3 / 10;
 
         yield return new WaitForSeconds(howLong);
 
         isDamageBoosted = false;
+        statuses[2].gameObject.SetActive(false);
         boostedDamage = 0;
     }
     
     public IEnumerator ApplyBoostBlood(int blood, float howLong)
     {
         isBloodBoosted = true;
+        statuses[3].gameObject.SetActive(true);
         boostedBlood = blood;
         yield return new WaitForSeconds(howLong);
 
         isBloodBoosted = false;
+        statuses[3].gameObject.SetActive(false);
         boostedBlood = 0;
     }
 
     public IEnumerator ApplySlow(int slowValue, float howLong)
     {
         isSlowed = true;
-        var previousSpeed = speed;
+        statuses[0].gameObject.SetActive(true);
         speed -= slowValue * 0.1f;
         if (speed <= 0)
         {
@@ -183,12 +195,14 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         yield return new WaitForSeconds(howLong);
 
         isSlowed = false;
-        speed = previousSpeed;
+        statuses[0].gameObject.SetActive(false);
+        speed += slowValue * 0.1f;
     }
 
     public IEnumerator ApplyStun(float howLong)
     {
         isStunned = true;
+        statuses[4].gameObject.SetActive(true);
         var currentSpeed = speed;
 
         speed = 0;
@@ -196,6 +210,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         yield return new WaitForSeconds(howLong);
 
         isStunned = false;
+        statuses[4].gameObject.SetActive(false);
         speed = currentSpeed;
     }
 
