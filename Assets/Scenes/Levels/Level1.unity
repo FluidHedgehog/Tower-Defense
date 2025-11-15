@@ -39053,6 +39053,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4049265707965956453, guid: f34fb32092b95b94697e4bb8ef549cf8, type: 3}
+    - target: {fileID: 3951639431040726885, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: 'This Early demo shows the core of our dark-fantasy tower defense: build
+        cursed towers, merge them into stronger forms and unleash forbidden magic
+        to survive incoming waves.'
+      objectReference: {fileID: 0}
     - target: {fileID: 4584451894273539305, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_Sprite
       value: 
