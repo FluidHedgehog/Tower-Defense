@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 588c651339c69504fa65ac48052e9777, type: 3}
-  m_Name: 10 12
+  m_Name: 22
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   spawnDelay: 1
   enemyTypes:
