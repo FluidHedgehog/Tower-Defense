@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spell
   effectType: 2
   cost: 25
-  range: 5
-  baseValue: 30
+  range: 3
+  baseValue: 100
   howLong: 1
   cooldown: 40
   cycles: 5

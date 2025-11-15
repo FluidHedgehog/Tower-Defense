@@ -33611,7 +33611,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 481255067}
   text: {fileID: 448341511}
   maxBlood: 100
-  startBlood: 80
+  startBlood: 65
 --- !u!1 &403084620
 GameObject:
   m_ObjectHideFlags: 0
