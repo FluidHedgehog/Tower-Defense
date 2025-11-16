@@ -43,7 +43,7 @@ public static class MoveTowerEvents
         {
             OnMergeTower();
         }
-        else if (canPlace)
+        else if (canPlace && turretMover.CanBuyMove(10))
         {
             OnPlaceTower();
         }
@@ -63,16 +63,21 @@ public static class MoveTowerEvents
     static void CheckMerge(Vector2 mousePos)
     {
         canMerge = TurretMerger.CanMerge(TurretMerger.turret, TurretMerger.target = GridHelper.DetectTower(mousePos));
-        GridHelper.HoverMerge(currentTile);
+        if (canMerge)
+        {
+            GridHelper.HoverMerge(currentTile);
+        }
     }
 
     static void OnPlaceTower()
     {
         var isPlaced = turretMover.MoveTurret(currentTile);
+        BloodSystemEvents.TriggerBloodRemoved(10);
 
         if (isPlaced)
         {
             GridHelper.DestroyTower(TurretMerger.turretPos);
+
         }
         //GridHelper.SetToWorld(currentTile, out Vector3 worldPos);
         

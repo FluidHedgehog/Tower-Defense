@@ -4,7 +4,9 @@ public static class IdleEvents
 {
 
     static GameObject currentRange;
+    static GameObject currentTurret;
 #nullable enable
+
     public static void OnPoint(Vector2 mousePos)
     {
         GameObject? tower = GridHelper.DetectTower(mousePos);
@@ -17,6 +19,13 @@ public static class IdleEvents
             }
             return;
         }
+
+        if (currentTurret != null && tower != currentTurret)
+        {
+            currentTurret.gameObject.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+        }
+
+        currentTurret = tower;
         currentRange = tower.gameObject.transform.GetChild(1).GetChild(0).gameObject; 
         currentRange.SetActive(true);
     }

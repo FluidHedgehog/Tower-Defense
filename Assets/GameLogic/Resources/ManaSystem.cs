@@ -93,7 +93,6 @@ public class ManaSystem : MonoBehaviour
 
     public bool CanSpell(int cost)
     {
-        if (cost <= currentMana) return true;
-        else return false;
+        return currentMana - cost >= 0;
     }
 }

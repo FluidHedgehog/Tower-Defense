@@ -65,7 +65,10 @@ public static class PlaceTowerEvents
     static void CheckMerge(Vector2 mousePos)
     {
         canMerge = TurretMerger.CanMerge(TurretMerger.turret, TurretMerger.target = GridHelper.DetectTower(mousePos));
-        GridHelper.HoverMerge(currentTile);
+        if (canMerge)
+        {
+            GridHelper.HoverMerge(currentTile);
+        }
     }
 
     static void OnPlaceTower()
