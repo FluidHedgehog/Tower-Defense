@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef097fb68cd944cab14214a4d55a72, type: 3}
   m_Name: Plague+
   m_EditorClassIdentifier: Assembly-CSharp::Ability
-  effectType: 3
+  effectType: 1
   calculator: 0
   regularDPS: 0
   enemyDensity: 0.5
   uptime: 0
-  baseValue: 20
+  baseValue: 30
   range: 3
   cycles: 1
-  cooldown: 0.23
+  cooldown: 0.15
   howLong: 0.05
   projectile: {fileID: 0}
