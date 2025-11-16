@@ -17,7 +17,7 @@ MonoBehaviour:
   regularDPS: 0
   enemyDensity: 0.5
   uptime: 0
-  baseValue: 30
+  baseValue: 40
   range: 4
   cycles: 1
   cooldown: 1
