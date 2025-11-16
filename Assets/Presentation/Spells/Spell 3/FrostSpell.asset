@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FrostSpell
   m_EditorClassIdentifier: Assembly-CSharp::Spell
   effectType: 1
-  cost: 25
+  cost: 20
   range: 8
   baseValue: 100
   howLong: 5
