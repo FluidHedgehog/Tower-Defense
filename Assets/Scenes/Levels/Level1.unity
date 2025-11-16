@@ -71048,7 +71048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthSlider: {fileID: 335098843}
-  maxLives: 50
+  maxLives: 100
 --- !u!1 &1547228633
 GameObject:
   m_ObjectHideFlags: 0
