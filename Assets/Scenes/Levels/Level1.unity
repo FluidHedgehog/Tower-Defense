@@ -33610,8 +33610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BloodSystem
   bloodSlider: {fileID: 481255067}
   text: {fileID: 448341511}
-  maxBlood: 100
-  startBlood: 65
+  maxBlood: 150
+  startBlood: 60
 --- !u!1 &403084620
 GameObject:
   m_ObjectHideFlags: 0
@@ -37459,7 +37459,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dccef996747d0fe449ae7d6554cd7a59, type: 2}
   - {fileID: 11400000, guid: de6d6ff2255862c449c149d917abe5c5, type: 2}
   - {fileID: 11400000, guid: eb0fb7c5e31e7bb43823972bf8755c45, type: 2}
-  - {fileID: 11400000, guid: 66f0a0b95b28aaa42b81f6e0eac2793a, type: 2}
   - {fileID: 11400000, guid: 85cb49f1ea5bbeb43b26bf768e22be09, type: 2}
   - {fileID: 11400000, guid: 928b87e6328c3bd409b51883b6fd38da, type: 2}
   - {fileID: 11400000, guid: 284ef95f945755b4fbcfdd661b3ad96e, type: 2}
@@ -71048,7 +71047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthSlider: {fileID: 335098843}
-  maxLives: 100
+  maxLives: 60
 --- !u!1 &1547228633
 GameObject:
   m_ObjectHideFlags: 0

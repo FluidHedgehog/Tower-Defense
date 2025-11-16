@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   spawnDelay: 0.9
   enemyTypes:
-  - enemyPrefab: {fileID: 10851667923707881, guid: 6fd0aedfd22125f468cf24cbb4f83d74, type: 3}
-    spawnChance: 65
+  - enemyPrefab: {fileID: 7082350316967811236, guid: 49422a13144861d469cbaf4e1b2e0ef1, type: 3}
+    spawnChance: 53
   - enemyPrefab: {fileID: 5554107496535174016, guid: 697d39aa2f5b4f848a44a61b6b2484d9, type: 3}
-    spawnChance: 35
+    spawnChance: 46
   timeBetweenWaves: 10
   enemiesPerWave: 35
-  maxChanceValue: 100
+  maxChanceValue: 99
