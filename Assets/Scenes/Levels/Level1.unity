@@ -38025,7 +38025,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85cb49f1ea5bbeb43b26bf768e22be09, type: 2}
   - {fileID: 11400000, guid: 928b87e6328c3bd409b51883b6fd38da, type: 2}
   - {fileID: 11400000, guid: 284ef95f945755b4fbcfdd661b3ad96e, type: 2}
-  - {fileID: 11400000, guid: 08d19119b2f7e934ba737a6bf3472eeb, type: 2}
   - {fileID: 11400000, guid: bf809aa06bea39f4e824e8a2112282bb, type: 2}
   - {fileID: 11400000, guid: a72351f984649ef4ebc324f64b06b4ee, type: 2}
   - {fileID: 11400000, guid: a4554f2ea897f7c4bb7d62da136073f7, type: 2}
@@ -71760,7 +71759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthSlider: {fileID: 335098843}
-  maxLives: 60
+  maxLives: 80
 --- !u!1 &1547228633
 GameObject:
   m_ObjectHideFlags: 0
