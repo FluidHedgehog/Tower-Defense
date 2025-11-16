@@ -75,4 +75,9 @@ public class TurretMover : MonoBehaviour
         }
         else return false;
     }
+
+    public bool CanBuyMove(int cost)
+    {
+        return cost < bloodSystem.currentBlood;
+    }
 }

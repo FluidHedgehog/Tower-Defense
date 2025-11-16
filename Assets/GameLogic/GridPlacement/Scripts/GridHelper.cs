@@ -34,11 +34,13 @@ public static class GridHelper
     {
         if (gridManager.availablePositions.Contains(tile))
         {
+            Debug.Log("Correct Tile!");
             gridManager.SetCorrectTile(tile);
             return true;
         }
         else
         {
+            Debug.Log("Wrong Tile!");
             gridManager.SetWrongTile(tile);
             return false;
         }

@@ -70,7 +70,7 @@ public class SpellCaster : MonoBehaviour
             return;
         }
 
-        if (!manaSystem.CanSpell(spellPrefab.GetComponent<SpellInstance>().cost))
+        if (!manaSystem.CanSpell(instance.spell.cost))
         {
             return;
         }
