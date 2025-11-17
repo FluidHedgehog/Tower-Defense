@@ -101,5 +101,7 @@ public static class GridHelper
         gridManager.turretPositions.Remove(tile);
         gridManager.availablePositions.Add(tile);
 
+        gridManager.turretLimitText.text = $"{gridManager.turretPositions.Count} / {gridManager.turretLimit}";
+
     }
 }

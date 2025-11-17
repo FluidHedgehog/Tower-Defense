@@ -20,7 +20,7 @@ public class TurretMover : MonoBehaviour
 
     public void CreateTurret(GameObject currentTurret)
     {
-        if (CanBuy(currentTurret))
+        if (CanBuy(currentTurret) && gridManager.HavePlaceForTurret())
         {
             ChangeStates.ChangeStateNow(1);
             turret = currentTurret;

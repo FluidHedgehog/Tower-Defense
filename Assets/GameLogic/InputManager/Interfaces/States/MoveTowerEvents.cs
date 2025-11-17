@@ -71,11 +71,11 @@ public static class MoveTowerEvents
 
     static void OnPlaceTower()
     {
-        var isPlaced = turretMover.MoveTurret(currentTile);
-        BloodSystemEvents.TriggerBloodRemoved(10);
 
-        if (isPlaced)
+
+        if (turretMover.MoveTurret(currentTile))
         {
+            BloodSystemEvents.TriggerBloodRemoved(10);
             GridHelper.DestroyTower(TurretMerger.turretPos);
 
         }

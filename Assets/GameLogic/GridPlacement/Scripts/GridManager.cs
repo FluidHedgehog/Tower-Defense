@@ -1,11 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] public int turretLimit;
+    [SerializeField] public TextMeshProUGUI turretLimitText;
+
     [SerializeField] public Tilemap towerTilemap;
     [SerializeField] public Tilemap helperTilemap;
 
@@ -26,14 +30,20 @@ public class GridManager : MonoBehaviour
                 availablePositions.Add(pos);
             }
         }
-
+        turretLimitText.text = $"{turretPositions.Count} / {turretLimit}";
         GridHelper.Initialize(this);
+    }
+
+    public bool HavePlaceForTurret()
+    {
+        return turretPositions.Count < turretLimit;
     }
 
     public void AddTurret(Vector3Int turretPos, GameObject turret)
     {
         turretPositions.Add(turretPos, turret);
         availablePositions.Remove(turretPos);
+        turretLimitText.text = $"{turretPositions.Count} / {turretLimit}";
         SetSpriteLayer();
     }
 

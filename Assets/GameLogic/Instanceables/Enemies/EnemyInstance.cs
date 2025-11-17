@@ -135,7 +135,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         if (isPoisoned) yield return null;
         isPoisoned = true;
-        statuses[1].gameObject.SetActive(true);
+        if (statuses[1] != null)
+            statuses[1].gameObject.SetActive(true);
 
         poisonCycles = cycles;
 
@@ -155,31 +156,36 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         }
 
         isPoisoned = false;
-        statuses[1].gameObject.SetActive(false);
+        if (statuses[1] != null)
+            statuses[1].gameObject.SetActive(false);
     }
 
     public IEnumerator ApplyBoostDamage(int damage, float howLong)
     {
         isDamageBoosted = true;
-        statuses[2].gameObject.SetActive(true);
+        if (statuses[2] != null)
+            statuses[2].gameObject.SetActive(true);
         boostedDamage = damage * 3 / 10;
 
         yield return new WaitForSeconds(howLong);
 
         isDamageBoosted = false;
-        statuses[2].gameObject.SetActive(false);
+        if (statuses[2] != null)
+            statuses[2].gameObject.SetActive(false);
         boostedDamage = 0;
     }
     
     public IEnumerator ApplyBoostBlood(int blood, float howLong)
     {
         isBloodBoosted = true;
-        statuses[3].gameObject.SetActive(true);
+        if (statuses[3] != null)
+            statuses[3].gameObject.SetActive(true);
         boostedBlood = blood;
         yield return new WaitForSeconds(howLong);
 
         isBloodBoosted = false;
-        statuses[3].gameObject.SetActive(false);
+        if (statuses[3] != null)
+            statuses[3].gameObject.SetActive(false);
         boostedBlood = 0;
     }
 
@@ -187,7 +193,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     {
         isSlowed = true;
         var previousSpeed = speed; 
-        statuses[0].gameObject.SetActive(true);
+        if (statuses[0] != null)
+            statuses[0].gameObject.SetActive(true);
         speed -= slowValue * 0.1f;
         if (speed <= 0)
         {
@@ -196,14 +203,16 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         yield return new WaitForSeconds(howLong);
 
         isSlowed = false;
-        statuses[0].gameObject.SetActive(false);
+        if (statuses[0] != null)
+            statuses[0].gameObject.SetActive(false);
         speed = previousSpeed;
     }
 
     public IEnumerator ApplyStun(float howLong)
     {
         isStunned = true;
-        statuses[4].gameObject.SetActive(true);
+        if (statuses[4] != null)
+            statuses[4].gameObject.SetActive(true);
         var currentSpeed = speed;
 
         speed = 0;
@@ -211,7 +220,8 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         yield return new WaitForSeconds(howLong);
 
         isStunned = false;
-        statuses[4].gameObject.SetActive(false);
+        if (statuses[4] != null)
+            statuses[4].gameObject.SetActive(false);
         speed = currentSpeed;
     }
 
