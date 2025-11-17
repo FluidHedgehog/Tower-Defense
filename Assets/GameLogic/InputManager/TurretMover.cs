@@ -69,7 +69,7 @@ public class TurretMover : MonoBehaviour
     bool CanBuy(GameObject turret)
     {
         cost = turret.GetComponent<TurretInstance>().cost;
-        if (cost < bloodSystem.currentBlood)
+        if (cost <= bloodSystem.currentBlood)
         {
             return true;
         }
@@ -78,6 +78,6 @@ public class TurretMover : MonoBehaviour
 
     public bool CanBuyMove(int cost)
     {
-        return cost < bloodSystem.currentBlood;
+        return cost <= bloodSystem.currentBlood;
     }
 }
