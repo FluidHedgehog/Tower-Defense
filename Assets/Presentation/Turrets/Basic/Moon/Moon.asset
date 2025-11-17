@@ -18,7 +18,7 @@ MonoBehaviour:
   enemyDensity: 1
   uptime: 0.75
   baseValue: 12
-  range: 2.4
+  range: 2.75
   cycles: 1
   cooldown: 1
   howLong: 0.05

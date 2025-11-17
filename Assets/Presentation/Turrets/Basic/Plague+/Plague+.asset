@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Plague+
   m_EditorClassIdentifier: Assembly-CSharp::Ability
   effectType: 1
-  calculator: 0
+  calculator: 1
   regularDPS: 0
   enemyDensity: 0.5
   uptime: 0
-  baseValue: 35
+  baseValue: 12
   range: 3
   cycles: 1
   cooldown: 0.1
