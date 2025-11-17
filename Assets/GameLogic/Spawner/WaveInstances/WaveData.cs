@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WaveData", menuName = "Wave/WaveData")]
 public class WaveData : ScriptableObject
 {
-    [Range(0.05f, 5)]
+    [Range(0.05f, 10)]
     public float spawnDelay;
 
     [System.Serializable]

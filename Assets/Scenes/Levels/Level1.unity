@@ -33896,8 +33896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BloodSystem
   bloodSlider: {fileID: 481255067}
   text: {fileID: 448341511}
-  maxBlood: 150
-  startBlood: 60
+  maxBlood: 600
+  startBlood: 65
 --- !u!1 &403084620
 GameObject:
   m_ObjectHideFlags: 0
@@ -38014,6 +38014,10 @@ MonoBehaviour:
   - {fileID: 497273181}
   - {fileID: 492344104}
   waves:
+  - {fileID: 11400000, guid: c6cd32b39acedb743bd6273fc10bb45b, type: 2}
+  - {fileID: 11400000, guid: 840cc42e392ba6941b5e1266a47cdb3b, type: 2}
+  - {fileID: 11400000, guid: 0a7ec0abfb463774590af5cefd7bcca3, type: 2}
+  - {fileID: 11400000, guid: aab565182e915e942b394a9f704d1dae, type: 2}
   - {fileID: 11400000, guid: 1a0e74c390eed5f4284b0f85f00f2070, type: 2}
   - {fileID: 11400000, guid: d926914417773b046b81705faa1cadc9, type: 2}
   - {fileID: 11400000, guid: dce20e8dd1bcf9141bfb35128f3b971b, type: 2}
