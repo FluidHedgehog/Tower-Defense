@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ForkBoy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyType
   health: 50
-  speed: 3.4
+  speed: 3.5
   damage: 1
   blood: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   effectType: 2
   cost: 15
   range: 3.5
-  baseValue: 90
+  baseValue: 100
   howLong: 1
   cooldown: 40
   cycles: 5
