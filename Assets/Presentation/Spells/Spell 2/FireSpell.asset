@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FireSpell
   m_EditorClassIdentifier: Assembly-CSharp::Spell
   effectType: 2
-  cost: 20
+  cost: 15
   range: 3.5
-  baseValue: 100
+  baseValue: 90
   howLong: 1
   cooldown: 40
   cycles: 5

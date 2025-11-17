@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6b122b4b2225a4486f0ab501f1558b, type: 3}
   m_Name: FatBoy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyType
-  health: 910
-  speed: 2
+  health: 400
+  speed: 1.6
   damage: 4
-  blood: 3
+  blood: 1

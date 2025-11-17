@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   spawnDelay: 1.3
   enemyTypes:
-  - enemyPrefab: {fileID: 7082350316967811236, guid: 49422a13144861d469cbaf4e1b2e0ef1, type: 3}
+  - enemyPrefab: {fileID: 10851667923707881, guid: 6fd0aedfd22125f468cf24cbb4f83d74, type: 3}
     spawnChance: 100
   timeBetweenWaves: 10
-  enemiesPerWave: 7
+  enemiesPerWave: 20
   maxChanceValue: 100

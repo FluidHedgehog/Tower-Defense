@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 1
   towerKind: 1
-  cost: 40
+  cost: 25
 --- !u!82 &93585060757752216
 AudioSource:
   m_ObjectHideFlags: 0
