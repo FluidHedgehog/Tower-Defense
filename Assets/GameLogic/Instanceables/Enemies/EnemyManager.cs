@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
-
     [SerializeField] EnemySpawner enemySpawner;
     public bool isLastWave;
 
@@ -15,11 +14,13 @@ public class EnemyManager : MonoBehaviour
     void OnEnable()
     {
         BloodSystemEvents.OnBloodAdded += ValidateEnemies;
+        HealthSystemEvents.OnHealthRemoved += ValidateEnemies;
     }
 
     void OnDisable()
     {
         BloodSystemEvents.OnBloodAdded -= ValidateEnemies;
+        HealthSystemEvents.OnHealthRemoved -= ValidateEnemies;
     }
 
     public void AddEnemies(GameObject enemy)

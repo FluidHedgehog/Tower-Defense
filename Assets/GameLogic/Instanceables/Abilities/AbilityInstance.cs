@@ -8,6 +8,7 @@ public abstract class AbilityInstance : MonoBehaviour
     [Header("Ability configuration")]
     public Ability ability;
     public GameObject showRange;
+    public GameObject rangeSprite;
 
     [HideInInspector] public CircleCollider2D range { get; protected set; }
     [HideInInspector] public bool isActive { get; set; }
@@ -21,7 +22,13 @@ public abstract class AbilityInstance : MonoBehaviour
         range.radius = ability.range;
         range.isTrigger = true;
 
+
         showRange.transform.localScale *= ability.range * 2;
+
+        if (rangeSprite != null)
+        {
+            rangeSprite.transform.localScale *= ability.range * 2;
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)

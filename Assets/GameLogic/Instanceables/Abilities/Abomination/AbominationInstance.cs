@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class AbominationInstance : MonoBehaviour
 {
-
-
     EnemyManager enemyManager;
     [Range(1, 1000)]
     [SerializeField] int damage;
@@ -29,6 +27,7 @@ public class AbominationInstance : MonoBehaviour
     {
         if (canShoot)
         {
+            slider.value = 0;
             enemyManager.DamageAll(damage);
             canShoot = false;
             StartCoroutine(AbilityCoroutine());
@@ -42,7 +41,6 @@ public class AbominationInstance : MonoBehaviour
             slider.value += 1;
             yield return new WaitForSeconds(i);
         }
-
         canShoot = true;
     }
 

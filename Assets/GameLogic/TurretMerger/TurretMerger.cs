@@ -25,7 +25,8 @@ public static class TurretMerger
         int selectedGroup = GetMergeGroup(selected);
         int targetGroup = GetMergeGroup(target);
 
-        if (selectedGroup == 2 && targetGroup == 2) return false;
+        if (selectedGroup == 2 || targetGroup == 2) return false;
+        //if (selectedGroup == 2 && targetGroup == 2) return false;
 
         if (selectedGroup + targetGroup >= 3) return false;
         else return true;
@@ -61,7 +62,6 @@ public static class TurretMerger
 
     public static bool MergeTowers(GameObject tower1, GameObject tower2, Vector3Int tile)
     {
-        
 
         if (!CanMerge(tower1, tower2))
         {
@@ -81,6 +81,8 @@ public static class TurretMerger
         int[] group = { GetMergeGroup(tower1), GetMergeGroup(tower2) };
 
         GameObject mergeResult = GetMergeResult(combinedCode, group.Max());
+
+        if (mergeResult == null) return false;
 
         int mergeCost = mergeResult.GetComponent<TurretInstance>().cost;
 
@@ -118,7 +120,7 @@ public static class TurretMerger
                     return group switch
                     {
                         0 => turretBase.Thorns1,
-                        1 => turretBase.Thorns2,
+                        //1 => turretBase.Thorns2,
                         _ => null
                     };
                 }
@@ -128,7 +130,7 @@ public static class TurretMerger
                     return group switch
                     {
                         0 => turretBase.Plague1,
-                        1 => turretBase.Plague2,
+                        //1 => turretBase.Plague2,
                         _ => null
                     };
                 }
@@ -138,7 +140,7 @@ public static class TurretMerger
                     return group switch
                     {
                         0 => turretBase.Moon1,
-                        1 => turretBase.Moon2,
+                        //1 => turretBase.Moon2,
                         _ => null
                     };
                 }
@@ -148,7 +150,7 @@ public static class TurretMerger
                     return group switch //Thorns + Plague
                     {
                         0 => turretBase.Forest1,
-                        1 => turretBase.Forest2,
+                        //1 => turretBase.Forest2,
                         _ => null
                     };
                 } 
@@ -158,7 +160,7 @@ public static class TurretMerger
                     return group switch //Moon + Thorns
                     {
                         0 => turretBase.Willow1,
-                        1 => turretBase.Willow2,
+                        //1 => turretBase.Willow2,
                         _ => null
                     };
                 } 
@@ -168,7 +170,7 @@ public static class TurretMerger
                     return group switch //Moon + Plague
                     {
                         0 => turretBase.Generosity1,
-                        1 => turretBase.Generosity2,
+                        //1 => turretBase.Generosity2,
                         _ => null
                     };
                 } 
@@ -176,7 +178,7 @@ public static class TurretMerger
                 {
                     return group switch
                     {
-                        1 => turretBase.Generosity2,
+                        //1 => turretBase.Generosity2,
                         _ => null
                     };
                 }
@@ -184,7 +186,7 @@ public static class TurretMerger
                 {
                     return group switch
                     {
-                        1 => turretBase.Forest2,
+                        //1 => turretBase.Forest2,
                         _ => null
                     };
                 }
@@ -192,7 +194,7 @@ public static class TurretMerger
                 {
                     return group switch
                     {
-                        1 => turretBase.Willow2,
+                        //1 => turretBase.Willow2,
                         _ => null
                     };
                 }
