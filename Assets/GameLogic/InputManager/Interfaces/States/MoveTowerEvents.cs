@@ -43,7 +43,7 @@ public static class MoveTowerEvents
         {
             OnMergeTower();
         }
-        else if (canPlace && turretMover.CanBuyMove(10))
+        else if (canPlace && turretMover.CanBuyMove(5))
         {
             OnPlaceTower();
         }
@@ -72,7 +72,7 @@ public static class MoveTowerEvents
     static void OnPlaceTower()
     {
         var isPlaced = turretMover.MoveTurret(currentTile);
-        BloodSystemEvents.TriggerBloodRemoved(10);
+        BloodSystemEvents.TriggerBloodRemoved(5);
 
         if (isPlaced)
         {

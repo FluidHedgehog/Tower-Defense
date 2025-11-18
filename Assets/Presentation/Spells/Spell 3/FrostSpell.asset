@@ -17,5 +17,5 @@ MonoBehaviour:
   range: 8
   baseValue: 100
   howLong: 5
-  cooldown: 60
+  cooldown: 35
   cycles: 8

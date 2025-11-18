@@ -33897,7 +33897,7 @@ MonoBehaviour:
   bloodSlider: {fileID: 481255067}
   text: {fileID: 448341511}
   maxBlood: 150
-  startBlood: 80
+  startBlood: 70
 --- !u!1 &403084620
 GameObject:
   m_ObjectHideFlags: 0
@@ -38031,7 +38031,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47e881748a7831c4e9e97d8923ca4e02, type: 2}
   - {fileID: 11400000, guid: b49a044d5edadd24589ffe11d6660a10, type: 2}
   - {fileID: 11400000, guid: 9a6fcf094151ed84b8590f7b8c4793da, type: 2}
-  cooldown: 60
+  cooldown: 40
 --- !u!4 &1016265764
 Transform:
   m_ObjectHideFlags: 0
