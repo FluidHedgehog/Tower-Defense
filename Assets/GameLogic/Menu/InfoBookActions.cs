@@ -30,6 +30,12 @@ public class InfoBookActions : MonoBehaviour
 
     public void CloseBook()
     {
+        foreach (var page in pages)
+        {
+            page.SetActive(false);
+        }
+        
+        pages[0].SetActive(true);
         gameObject.SetActive(false);
     }
 }

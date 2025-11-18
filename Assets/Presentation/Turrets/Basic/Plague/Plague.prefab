@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 11400000, guid: 66c83cacc651334419a5637bda190baa, type: 2}
   showRange: {fileID: 4367328729500148141}
+  rangeSprite: {fileID: 0}
   enemiesInRange: []
 --- !u!1 &3222854495483887573
 GameObject:
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 0
   towerKind: 1
-  cost: 45
+  cost: 30
 --- !u!82 &-4425968701524924339
 AudioSource:
   m_ObjectHideFlags: 0

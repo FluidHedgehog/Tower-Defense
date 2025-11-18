@@ -15,7 +15,7 @@ MonoBehaviour:
   spawnDelay: 1.5
   enemyTypes:
   - enemyPrefab: {fileID: 10851667923707881, guid: 6fd0aedfd22125f468cf24cbb4f83d74, type: 3}
-    spawnChance: 30
+    spawnChance: 1
   timeBetweenWaves: 10
   enemiesPerWave: 20
-  maxChanceValue: 30
+  maxChanceValue: 1
