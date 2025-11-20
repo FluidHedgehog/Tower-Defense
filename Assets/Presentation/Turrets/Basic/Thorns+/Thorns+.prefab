@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretInstance
   towerType: 1
   towerKind: 0
-  cost: 40
+  cost: 34
 --- !u!82 &7244728882944758372
 AudioSource:
   m_ObjectHideFlags: 0
@@ -404,4 +404,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 11400000, guid: ccd395e17a285714bada115dd2cc343a, type: 2}
   showRange: {fileID: 3572836048716470307}
+  rangeSprite: {fileID: 0}
   enemiesInRange: []

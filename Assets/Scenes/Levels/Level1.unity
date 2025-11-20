@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &23373730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40614,12 +40614,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85cb49f1ea5bbeb43b26bf768e22be09, type: 2}
   - {fileID: 11400000, guid: 928b87e6328c3bd409b51883b6fd38da, type: 2}
   - {fileID: 11400000, guid: 284ef95f945755b4fbcfdd661b3ad96e, type: 2}
-  - {fileID: 11400000, guid: a72351f984649ef4ebc324f64b06b4ee, type: 2}
-  - {fileID: 11400000, guid: 7eaa055fe9479214fb8988e7f5898453, type: 2}
-  - {fileID: 11400000, guid: e48b59b0563ea3e48812abfabd84af13, type: 2}
-  - {fileID: 11400000, guid: 47e881748a7831c4e9e97d8923ca4e02, type: 2}
-  - {fileID: 11400000, guid: b49a044d5edadd24589ffe11d6660a10, type: 2}
-  - {fileID: 11400000, guid: 9a6fcf094151ed84b8590f7b8c4793da, type: 2}
   cooldown: 60
 --- !u!4 &1016265764
 Transform:
@@ -42881,7 +42875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716527603500772149, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188436626773438879, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_text
@@ -75242,7 +75236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthSlider: {fileID: 335098843}
-  maxLives: 80
+  maxLives: 40
 --- !u!1 &1539604040
 GameObject:
   m_ObjectHideFlags: 0

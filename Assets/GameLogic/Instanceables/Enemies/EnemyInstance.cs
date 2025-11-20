@@ -256,15 +256,17 @@ public class EnemyInstance : MonoBehaviour, IMoveable
 
     void IMoveable.Dissappear()
     {
-        HealthSystemEvents.TriggerHealthRemoved(type.damage);
         Destroy(gameObject);
+        HealthSystemEvents.TriggerHealthRemoved(type.damage);
+        
     }
 
     IEnumerator Die()
     {
         speed = 0;
-        yield return new WaitForSeconds(1f);
-        BloodSystemEvents.TriggerBloodAdded(type.blood);
+        yield return new WaitForSeconds(0);
         Destroy(gameObject);
+        BloodSystemEvents.TriggerBloodAdded(type.blood);
+        
     }
 }

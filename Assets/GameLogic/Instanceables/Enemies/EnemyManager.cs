@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -28,8 +29,17 @@ public class EnemyManager : MonoBehaviour
         enemies.Add(enemy.GetComponent<EnemyInstance>());
     }
 
-    void ValidateEnemies(int i)
+    void ValidateEnemies(int dummy)
     {
+        StartCoroutine(ValidateEnemies1());
+    }
+
+    IEnumerator ValidateEnemies1()
+    {
+        
+        
+
+        yield return new WaitForSeconds(0.1f);
         enemies.RemoveAll(enemy => !enemy.isAlive || enemy == null);
 
         if (isLastWave && enemies.Count == 0)
