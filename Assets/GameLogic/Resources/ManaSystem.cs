@@ -61,7 +61,7 @@ public class ManaSystem : MonoBehaviour
         if (manaAddTimer >= manaAddCooldown)
         {
             manaAddTimer = 0;
-            OnManaAdded(manaAddValue);
+            ManaSystemEvents.TriggerManaAdded(manaAddValue);
         }
     }
 
