@@ -75188,8 +75188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManaSystem
   manaSlider: {fileID: 894830866}
   maxMana: 40
-  manaAddValue: 2
-  manaAddCooldown: 5
+  manaAddValue: 1
+  manaAddCooldown: 1
   manaAddTimer: 0
 --- !u!1 &1538288295
 GameObject:

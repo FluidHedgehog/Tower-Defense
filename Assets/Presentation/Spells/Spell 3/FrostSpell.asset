@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FrostSpell
   m_EditorClassIdentifier: Assembly-CSharp::Spell
   effectType: 1
-  cost: 20
+  cost: 25
   range: 8
   baseValue: 100
   howLong: 5
-  cooldown: 60
+  cooldown: 7
   cycles: 8

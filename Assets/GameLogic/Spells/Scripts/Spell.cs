@@ -22,7 +22,7 @@ public class Spell : ScriptableObject
     [SerializeField] public float howLong;
 
     [Header("How long between shots")]
-    [Range(10, 120)]
+    [Range(0, 120)]
     [SerializeField] public float cooldown;
 
     [Header("For Damage Over Time")]

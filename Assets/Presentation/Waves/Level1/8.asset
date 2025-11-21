@@ -19,5 +19,5 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 10851667923707881, guid: 6fd0aedfd22125f468cf24cbb4f83d74, type: 3}
     spawnChance: 33
   timeBetweenWaves: 10
-  enemiesPerWave: 20
+  enemiesPerWave: 80
   maxChanceValue: 100
