@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 90
   speed: 3
   damage: 1
-  blood: 3
+  blood: 1

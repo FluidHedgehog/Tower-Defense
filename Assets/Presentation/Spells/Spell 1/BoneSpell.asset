@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BoneSpell
   m_EditorClassIdentifier: Assembly-CSharp::Spell
   effectType: 0
-  cost: 15
+  cost: 19
   range: 3
-  baseValue: 50
+  baseValue: 45
   howLong: 0.05
-  cooldown: 6
+  cooldown: 10
   cycles: 1

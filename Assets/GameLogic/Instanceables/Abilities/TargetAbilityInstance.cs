@@ -12,9 +12,9 @@ public class TargetAbilityInstance : AbilityInstance
         
         while (isActive && enemiesInRange.Count > 0)
         {
-            if (currentTarget == null || !currentTarget.isAlive || !enemiesInRange.Contains(currentTarget))
-                ChooseTarget();
-
+            ChooseTarget();
+            //if (currentTarget == null || !currentTarget.isAlive || !enemiesInRange.Contains(currentTarget))
+                
             if (ShouldShoot())
                 yield return StartCoroutine(ShootAtTarget());
             else

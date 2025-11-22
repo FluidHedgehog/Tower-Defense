@@ -474,8 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90277d683e3d50f4e965517bb3137785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbominationInstance
-  damage: 487
-  cooldown: 3
+  damage: 45
+  cooldown: 12
   canShoot: 0
   slider: {fileID: 6904866550489489652}
 --- !u!1 &4771519178061578487

@@ -25,6 +25,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     [Header("Enemy variables - DO NOT TOUCH! FOR REFERENCE ONLY!")]
     [Space(5)]
     [HideInInspector] int health;
+    [HideInInspector] float baseSpeed;
     [HideInInspector] float speed;
     [HideInInspector] public bool isAlive = true;
     [HideInInspector] public bool isSlowed;
@@ -60,6 +61,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     void OnEnable()
     {
         health = type.health;
+        baseSpeed = type.speed;
         speed = type.speed;
         sliderUI.maxValue = type.health;
         sliderUI.value = health;
@@ -192,7 +194,6 @@ public class EnemyInstance : MonoBehaviour, IMoveable
     public IEnumerator ApplySlow(int slowValue, float howLong)
     {
         isSlowed = true;
-        var previousSpeed = speed; 
         if (statuses[0] != null)
             statuses[0].gameObject.SetActive(true);
         speed -= slowValue * 0.1f;
@@ -205,7 +206,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         isSlowed = false;
         if (statuses[0] != null)
             statuses[0].gameObject.SetActive(false);
-        speed = previousSpeed;
+        speed = baseSpeed;
     }
 
     public IEnumerator ApplyStun(float howLong)
@@ -213,7 +214,6 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         isStunned = true;
         if (statuses[4] != null)
             statuses[4].gameObject.SetActive(true);
-        var currentSpeed = speed;
 
         speed = 0;
 
@@ -222,7 +222,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         isStunned = false;
         if (statuses[4] != null)
             statuses[4].gameObject.SetActive(false);
-        speed = currentSpeed;
+        speed = baseSpeed;
     }
 
     void CreateBlood(int blood)
@@ -246,6 +246,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         enhanced += enh;
 
         speed += 0.10f;
+        baseSpeed += 0.10f;
 
     }
 
