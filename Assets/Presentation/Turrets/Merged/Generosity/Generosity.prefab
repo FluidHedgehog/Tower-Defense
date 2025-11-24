@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TargetAbilityInstance
   ability: {fileID: 11400000, guid: a93d1f6c08240f549b7acacc87cda2a2, type: 2}
   showRange: {fileID: 4574362992411125959}
+  rangeSprite: {fileID: 0}
   enemiesInRange: []
 --- !u!1 &965970707517072746
 GameObject:
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaAbilityInstance
   ability: {fileID: 11400000, guid: 2b8bf375fe5fd4c41b4d198be61779f4, type: 2}
   showRange: {fileID: 1189709393306508789}
+  rangeSprite: {fileID: 0}
   enemiesInRange: []
 --- !u!1 &1189709393306508789
 GameObject:
@@ -269,7 +271,7 @@ Transform:
   m_GameObject: {fileID: 2317077249440143680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.184, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -325,7 +327,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5102664050807150922, guid: 9753c827a02887747bb74077a148c832, type: 3}
-  m_Color: {r: 0.95869803, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
