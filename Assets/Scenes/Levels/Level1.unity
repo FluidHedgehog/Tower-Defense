@@ -42268,6 +42268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseGame
   pauseButton: {fileID: 1267292254}
   startButton: {fileID: 893325124}
+  options: {fileID: 1567568354}
 --- !u!1 &1193388531
 GameObject:
   m_ObjectHideFlags: 0
@@ -78185,6 +78186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfoBookActions
   currentPage: 0
+  isOpen: 0
   pages:
   - {fileID: 667963379}
   - {fileID: 589016254}

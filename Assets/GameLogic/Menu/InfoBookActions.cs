@@ -4,12 +4,20 @@ public class InfoBookActions : MonoBehaviour
 {
     public int currentPage;
 
+    public bool isOpen = false;
+
     public GameObject[] pages;
 
     public void OpenFirstPage()
     {
-        currentPage = 0;
-        pages[0].gameObject.SetActive(true);
+        if (!isOpen) {
+            currentPage = 0;
+            pages[0].gameObject.SetActive(true);
+            isOpen = true;
+        } else
+        {
+            CloseBook();
+        }
     }
 
     public void FlipPage(bool nextPage)
@@ -37,5 +45,6 @@ public class InfoBookActions : MonoBehaviour
         
         pages[0].SetActive(true);
         gameObject.SetActive(false);
+        isOpen = false;
     }
 }
