@@ -1446,7 +1446,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: ---'
+  m_text: Generosity will grant you with bigger amounts of blood when an opponent
+    is killed within it's range. Hovewer it also deals damage.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -35502,7 +35503,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: Quick enemies'
+  m_text: 'Oh the abomination! It will deal great damage and kill your enemies with
+    ease, but be aware: it will also make them faster, harder to kill. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -39225,7 +39227,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: Quick enemies'
+  m_text: 'Plague is a tower that slows down your enemies.
+
+    Everyone in its range
+    will move slowly, but the moment they escape the power of the tower, they will
+    move at normal speed again. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -39658,7 +39664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: Quick enemies'
+  m_text: 'Willow will stun your enemies making them much easier to kill. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -40428,7 +40434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: abababab
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -42563,6 +42569,23 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 894123097783724635, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: 'Here you can see your available resources. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230919298120653853, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Fire Explosion deals damage over time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304003455485976268, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Cooldown to the next wave.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971862554113482450, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: "Each spell has a different effect. \nYou can cast spells using *mana*.
+        \nAfter casting a spell,  you must wait for its cooldown to finish."
+      objectReference: {fileID: 0}
     - target: {fileID: 1971862554113482450, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -42574,6 +42597,16 @@ PrefabInstance:
     - target: {fileID: 1977638159198975465, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330322507917477321, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: 'You can buy towers with *blood*.
+
+        You can place the tower on
+        available tiles - the green ones.
+
+        Each tower has different and unique
+        effect. '
       objectReference: {fileID: 0}
     - target: {fileID: 2330322507917477321, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_sharedMaterial
@@ -42596,9 +42629,19 @@ PrefabInstance:
       value: -448
       objectReference: {fileID: 0}
     - target: {fileID: 2706812997185107539, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: You can choose a spell by clicking on a corresponding button. Then,
+        choose a location to click on, and all enemies within range will be affected.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706812997185107539, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
+    - target: {fileID: 2854204447131146527, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: 'Feel free to experiment on your own, but if you want to see some suggestions
+        and learn more about the towers: check out the helpbook! '
+      objectReference: {fileID: 0}
     - target: {fileID: 3069618491352709625, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -42607,10 +42650,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3343895646646260911, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: 'These are time control buttons. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377598969270260832, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: This is your *life*.  You lose it when enemies enter your base.
+      objectReference: {fileID: 0}
     - target: {fileID: 3483754431962074358, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_text
       value: "You can merge 2 placed towers together. \nFirstly, you hold left mouse
-        button on one tower, then, you move your mouse above another tower and release
+        button on one tower, then you move your mouse above another tower and release
         the button. If you have enough blood, the towers will be merged into new
         or enhanced tower."
       objectReference: {fileID: 0}
@@ -42716,9 +42767,13 @@ PrefabInstance:
       objectReference: {fileID: 820240879}
     - target: {fileID: 3951639431040726885, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_text
-      value: 'This Early demo shows the core of our dark-fantasy tower defense: build
+      value: 'This early demo shows the core of our dark-fantasy tower defense: build
         cursed towers, merge them into stronger forms and unleash forbidden magic
         to survive incoming waves.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309716799206809241, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Frost slows down enemies in range for a short period of time.
       objectReference: {fileID: 0}
     - target: {fileID: 4483939835204617694, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_fontSize
@@ -42728,6 +42783,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 4958727500836861720, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: "This is *mana*. You use it to cast spells. \nIt replenish with time. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234130994023730189, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Plague tower slows enemies down.
+      objectReference: {fileID: 0}
     - target: {fileID: 5265535672999614720, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -42735,6 +42798,11 @@ PrefabInstance:
     - target: {fileID: 5265535672999614720, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882048761406547086, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: "Use this button to start the game. \n\nAfter starting the game, you
+        can also skip wave delay if you are ready to fight!"
       objectReference: {fileID: 0}
     - target: {fileID: 5882048761406547086, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_sharedMaterial
@@ -42828,6 +42896,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7622749252158531142, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Bones From The Ground deals damage to all enemies in range.
+      objectReference: {fileID: 0}
     - target: {fileID: 7707260713086471562, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -42874,8 +42946,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188436626773438879, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_text
-      value: 'You can move the towers at a cost between available grid. Just hold
-        left mouse button above the mouse and release at the destination. '
+      value: 'You can move already-placed towers at a cost between available grid.
+        Just hold left mouse button above the mouse and release at the destination. '
       objectReference: {fileID: 0}
     - target: {fileID: 8188436626773438879, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_sharedMaterial
@@ -42884,6 +42956,16 @@ PrefabInstance:
     - target: {fileID: 8188436626773438879, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356485292965063299, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: This is *blood*. Your main resource. You gather it from the enemies
+        and use it to buy, merge or move towers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393198368863120157, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
+      propertyPath: m_text
+      value: Waves are procedurally generated. You need to live through the last
+        wave of enemies to complete the level.
       objectReference: {fileID: 0}
     - target: {fileID: 8630581438419867181, guid: 596ff371ab4522b4b87928ad73411fad, type: 3}
       propertyPath: m_AnchorMax.x
@@ -73523,7 +73605,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: Quick enemies'
+  m_text: 'Thorns are a tower that, when placed, will attack all of the opponents
+    in range, but do so weakly and slowly. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -76439,7 +76522,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: ---'
+  m_text: Forest is a merged tower that emerges from the combination of Plague and
+    Thorns. It will attack all your enemies in range by draining their life by entwining
+    them with deadly vines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -77222,7 +77307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weakness: Large groups of enemies'
+  m_text: 'Moon tower is a designed to attack strongly but only one enemy at a time. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
