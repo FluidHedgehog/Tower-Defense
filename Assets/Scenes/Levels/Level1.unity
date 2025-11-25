@@ -1522,8 +1522,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Generosity grants you larger amounts of blood when an opponent is killed
-    within its range. It also deals additional damage.
+  m_text: 'Generosity grants you additional amount of blood when an enemy is killed
+    within range. It also deals additional damage.
+
+
+    Beware of large groups.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -36457,8 +36460,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oh the abomination! It will deal great damage and kill your enemies with
-    ease, but be aware: it will also make them faster, harder to kill. '
+  m_text: 'It gives you great power, but at a cost.
+
+
+    Brave enough?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -41154,7 +41159,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Plague is a tower that slows down your enemies.
+  m_text: 'Greatly slows down enemies.
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -41723,7 +41731,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Willow will stun your enemies making them much easier to kill. '
+  m_text: 'Deals damage to all enemies within range. Also stuns them.
+
+
+    Fear
+    not.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -76087,8 +76099,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Thorns are a tower that, when placed, will attack all of the opponents
-    in range, but do so weakly and slowly. '
+  m_text: 'Deals small damage to all enemies within range.
+
+
+    Beware of fast enemies!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -79748,9 +79762,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Forest is a merged tower that emerges from the combination of Plague and
-    Thorns. It will attack all your enemies in range by draining their life by entwining
-    them with deadly vines.
+  m_text: 'Poisons enemies, dealing them damage over time. Even when out of range!
+
+
+    Beware
+    of fast enemies!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -80609,7 +80625,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Moon tower is designed to attack strongly, but only one enemy at a time. '
+  m_text: 'Deals medium damage to one enemy.
+
+
+    Beware of large groups!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -81813,7 +81832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1856205476
 Transform:
   m_ObjectHideFlags: 0
