@@ -267,7 +267,7 @@ public class EnemyInstance : MonoBehaviour, IMoveable
         speed = 0;
         yield return new WaitForSeconds(0);
         Destroy(gameObject);
-        BloodSystemEvents.TriggerBloodAdded(type.blood);
+        BloodSystemEvents.TriggerBloodAdded(type.blood + boostedBlood);
         
     }
 }

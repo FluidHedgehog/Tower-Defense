@@ -474,6 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90277d683e3d50f4e965517bb3137785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbominationInstance
+  canvas: {fileID: 1838541727996717816}
+  space: {fileID: 6890295202032416620}
   damage: 45
   cooldown: 12
   canShoot: 0
@@ -791,7 +793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &320005546152499433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1046,7 +1048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Death Wish
+  m_text: Space!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
   m_sharedMaterial: {fileID: -4514251474594935852, guid: 82f8a05f96b874248a5d266fc0fc058a, type: 2}
@@ -1073,8 +1075,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
